@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class RotateCamera : MonoBehaviour
 {
+    [SerializeField] PlayerController playerController;
+
     float targetRotation;
     float speed = 400f;
     int direction = 0;
     bool isMoving = false;
-
-    [SerializeField] PlayerController playerController;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
