@@ -5,23 +5,27 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Dictionary<string, float> directions = new Dictionary<string, float>
+    Dictionary<string, float> directions = new Dictionary<string, float> // WSAD movement directions
     {
         {"forward", 0f},
         {"left", 270f},
         {"right", 90f},
         {"back", 180f}
     };
+    // Vectors used to calculate movement
     Vector3 originalPosition;
     Vector3 targetPosition;
     Vector3 originalRotation;
     Vector3 targetRotation;
+    // Time for movement
     float timeToMove = 0.15f;
     float timeToJump = 0.15f;
     float timeToPressBounce = 0.5f;
+    // Movement bools to check stuff
+    int isOnWall = 0; // Collision counter (I know it's not a bool)
+    int isInAir = 0;
     bool isMoving = false;
     bool isJumping = false;
-    int isOnWall = 0;
     bool resetMovement = false;
     bool canBounce = false;
     bool isBouncing = false;
@@ -40,6 +44,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         HandleInputs();
+        print(isInAir);
     }
 
     //=====================================================================================================
@@ -47,31 +52,31 @@ public class PlayerController : MonoBehaviour
     //=====================================================================================================
     void HandleInputs()
     {
-        if (Input.GetKeyDown(KeyCode.W) && !isMoving && !isJumping)
+        if (Input.GetKeyDown(KeyCode.W) && !isMoving && !isJumping && isInAir == -1)
         {
             RotatePlayer("forward");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && !isMoving && !isJumping)
+        if (Input.GetKeyDown(KeyCode.S) && !isMoving && !isJumping && isInAir == -1)
         {
             RotatePlayer("back");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.A) && !isMoving && !isJumping)
+        if (Input.GetKeyDown(KeyCode.A) && !isMoving && !isJumping && isInAir == -1)
         {
             RotatePlayer("left");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && !isMoving && !isJumping)
+        if (Input.GetKeyDown(KeyCode.D) && !isMoving && !isJumping && isInAir == -1)
         {
             RotatePlayer("right");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isMoving)
+        if (Input.GetKeyDown(KeyCode.Space) && !isMoving && isInAir == -1)
         {
             if (!isJumping) { JumpUp(); }
             if (canBounce) { BounceUp(); }
@@ -85,6 +90,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Block"))
         {
+            isInAir--;
             if (isMoving) { resetMovement = true; }
             if (isJumping) { isOnWall++; }
         }
@@ -92,9 +98,10 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Block") && isJumping && isOnWall > 0)
+        if (collision.gameObject.CompareTag("Block"))
         {
-            isOnWall--;
+            isInAir++;
+            if (isJumping && isOnWall > 0) { isOnWall--; }
         }
     }
 
