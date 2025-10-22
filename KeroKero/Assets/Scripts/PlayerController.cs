@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] MoveCamera moveCamera;
     Dictionary<string, float> directions = new Dictionary<string, float> // WSAD movement directions
     {
         {"forward", 0f},
@@ -44,7 +45,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         HandleInputs();
-        print(isInAir);
     }
 
     //=====================================================================================================
@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Block"))
         {
             isInAir--;
+            // if (isInAir == -1) { moveCamera.ChangeCameraHeight(transform.position.y); }
             if (isMoving) { resetMovement = true; }
             if (isJumping) { isOnWall++; }
         }
