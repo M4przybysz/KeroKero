@@ -26,8 +26,9 @@ public class PlayerController : MonoBehaviour
     int isOnWall = 0; // Collision counter (I know it's not a bool)
     int isInAir = 0;
     bool isMoving = false;
-    bool isJumping = false;
     bool resetMovement = false;
+    public bool canJump = true;
+    bool isJumping = false;
     bool canBounce = false;
     bool isBouncing = false;
 
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(canJump);
         HandleInputs();
     }
 
@@ -76,7 +78,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isMoving && isInAir == -1)
+        if (Input.GetKeyDown(KeyCode.Space) && !isMoving && isInAir == -1 && canJump)
         {
             if (!isJumping) { JumpUp(); }
             if (canBounce) { BounceUp(); }
@@ -91,7 +93,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Block"))
         {
             isInAir--;
-            // if (isInAir == -1) { moveCamera.ChangeCameraHeight(transform.position.y); }
+            if (isInAir == -1) { moveCamera.ChangeCameraHeight(transform.position.y); } // Trigger camera movement
             if (isMoving) { resetMovement = true; }
             if (isJumping) { isOnWall++; }
         }

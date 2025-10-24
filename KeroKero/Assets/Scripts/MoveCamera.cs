@@ -17,15 +17,16 @@ public class MoveCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(0, playerController.transform.position.y - 0.15f, 0);
+        // Smooth camera movement
+        // transform.position = new Vector3(0, playerController.transform.position.y - 0.15f, 0);
     }
 
-    public void ChangeCameraHeight(float height)
+    public void ChangeCameraHeight(float height) // Camera movement trigger
     {
         StartCoroutine(CameraMovement(height));
     }
     
-    IEnumerator CameraMovement(float height)
+    IEnumerator CameraMovement(float height) // Move camera to specific position
     {
         float elapsedTime = 0f; // Start counting time
 
