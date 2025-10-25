@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
             if (isJumping) { isOnWall++; }
 
             // Check where the player is colliding with the block
-            Vector3 normal = collision.contacts[collision.contactCount-1].normal;
+            Vector3 normal = collision.contacts[collision.contactCount - 1].normal;
             if (normal.y > 0.5f) { return; } // If player is moving between blocks don't reset movement
 
             if (isMoving) { resetMovement = true; }
