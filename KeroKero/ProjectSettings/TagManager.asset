@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Block
+  - DeathTrigger
   layers:
   - Default
   - TransparentFX
