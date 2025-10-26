@@ -7,6 +7,8 @@ TagManager:
   - Block
   - DeathTrigger
   - Wall
+  - Outside
+  - GhostBlock
   layers:
   - Default
   - TransparentFX

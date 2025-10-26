@@ -1,4 +1,5 @@
 using System;
+using TreeEditor;
 using UnityEngine;
 
 public class BlockFall : MonoBehaviour
@@ -25,11 +26,19 @@ public class BlockFall : MonoBehaviour
             Vector3 normal = collision.contacts[collision.contactCount - 1].normal;
             if (normal.y > 0.5f && normal.z < 0.5f && normal.z > -0.5f && normal.x < 0.5f && normal.x > -0.5f)
             {
-                stop = true;
+                gameObject.GetComponent<BlockRandomMovement>().StopRandomMovement(); // Stop random movment and rotation
+                stop = true; // Stop falling
+
+                // Snap to position
                 transform.position = new Vector3(
                     transform.position.x,
                     (float)Math.Round(transform.position.y * 2, MidpointRounding.AwayFromZero) / 2,
                     transform.position.z);
+                
+                if (transform.position.y % 2 == 0)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+                }
             }
         }
     }

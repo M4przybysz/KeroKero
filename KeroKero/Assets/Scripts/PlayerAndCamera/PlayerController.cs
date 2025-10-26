@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
     //=====================================================================================================
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Outside"))
         {
             isInAir--;
             if (isInAir == -1) { moveCamera.ChangeCameraHeight(transform.position.y); } // Trigger camera movement
