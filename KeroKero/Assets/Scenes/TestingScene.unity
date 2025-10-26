@@ -474,7 +474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &359157242
 Transform:
   m_ObjectHideFlags: 0
@@ -1232,6 +1232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1548653594}
+  - component: {fileID: 1548653595}
   m_Layer: 0
   m_Name: BlockSpawner
   m_TagString: Untagged
@@ -1248,12 +1249,31 @@ Transform:
   m_GameObject: {fileID: 1548653593}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.17130162, y: 4.8936286, z: 2.523774}
+  m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1548653595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548653593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd8c60ba4a60dd43b50a66ff30468b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blocks:
+  - {fileID: 1640762750837574859, guid: 87348d7f66f0f7547bdac1140bf301ed, type: 3}
+  - {fileID: 7680551707262112905, guid: f0d86e70fb791214c858daf0ea9dc8ff, type: 3}
+  - {fileID: 7264132875832508108, guid: 716bf0f6e5787e745ab925ce65358103, type: 3}
+  - {fileID: 1851351178363769745, guid: ca6fd38c916fb0a4eb3a193b647e2275, type: 3}
+  - {fileID: 6850524432075598638, guid: 27a31c254141ffa46b5891c5136df994, type: 3}
+  - {fileID: 890861172087137235, guid: 986b999e4878d4f469aa546401715d83, type: 3}
 --- !u!1 &1559573193
 GameObject:
   m_ObjectHideFlags: 0

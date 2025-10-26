@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BlockFall : MonoBehaviour
 {
-    float fallingVelocity = 5f;
+    float fallingVelocity = 7.5f;
     bool stop = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
