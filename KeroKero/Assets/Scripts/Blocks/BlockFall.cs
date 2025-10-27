@@ -40,7 +40,7 @@ public class BlockFall : MonoBehaviour
                     transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
                 }
                 
-                if(transform.position.y > 12) // Destory blocks that aren't in the hole when they stop falling
+                if(transform.position.y > 13) // Destory blocks that aren't in the hole when they stop falling
                 {
                     Destroy(gameObject);
                 }
