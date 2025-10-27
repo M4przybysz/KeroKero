@@ -89,18 +89,23 @@ public class PlayerController : MonoBehaviour
     //=====================================================================================================
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Block"))
+        if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Outside"))
         {
             isInAir--;
             if (isInAir == -1) { moveCamera.ChangeCameraHeight(transform.position.y); } // Trigger camera movement
-            if (isMoving) { resetMovement = true; }
             if (isJumping) { isOnWall++; }
+
+            // Check where the player is colliding with the block
+            Vector3 normal = collision.contacts[collision.contactCount - 1].normal;
+            if (normal.y > 0.5f) { return; } // If player is moving between blocks don't reset movement
+
+            if (isMoving) { resetMovement = true; }
         }
     }
 
     void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Block"))
+        if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall"))
         {
             isInAir++;
             if (isJumping && isOnWall > 0) { isOnWall--; }

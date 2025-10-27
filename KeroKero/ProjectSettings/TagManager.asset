@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Block
+  - DeathTrigger
+  - Wall
+  - Outside
+  - GhostBlock
   layers:
   - Default
   - TransparentFX
