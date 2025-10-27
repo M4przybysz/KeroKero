@@ -3,8 +3,8 @@ using UnityEngine;
 public class BlockSpawnerController : MonoBehaviour
 {
     [SerializeField] GameObject[] blocks;
-    int spawnRangeX = 1;
-    int spawnRangeZ = 1;
+    int spawnRangeX = 2;
+    int spawnRangeZ = 2;
     float firsBlocSpawnkDelay = 1f;
     float blockSpawnDelay = 2f;
 

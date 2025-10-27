@@ -30,7 +30,7 @@ public class BlockRandomMovement : MonoBehaviour
 
     void RandomMovementAndRotation()
     {
-        if(!stop)
+        if(!stop && transform.position.y > 10)
         {
             // bool doMovement = true;
             bool doMovement = (Random.Range(1, randomMovementChance + 1) == 1) ? true : false; // Gample to trigger random movement
@@ -46,8 +46,8 @@ public class BlockRandomMovement : MonoBehaviour
                 for (int i = 0; i < ghost.childCount; i++)
                 {
                     // Check if any ghost block is out of level bounds  
-                    if (ghost.GetChild(i).position.x > 3 || ghost.GetChild(i).position.x < -3 ||
-                        ghost.GetChild(i).position.z > 3 || ghost.GetChild(i).position.x < -3)
+                    if (ghost.GetChild(i).position.x > 4 || ghost.GetChild(i).position.x < -4 ||
+                        ghost.GetChild(i).position.z > 4 || ghost.GetChild(i).position.x < -4)
                     {
                         ghost.position = transform.position;
                         cancelMovement = true; // Reset ghost position and reset movement if it would be out of bounds
@@ -71,8 +71,8 @@ public class BlockRandomMovement : MonoBehaviour
                 for (int i = 0; i < ghost.childCount; i++)
                 {
                     // Check if any ghost block is out of level bounds  
-                    if (ghost.GetChild(i).position.x > 3 || ghost.GetChild(i).position.x < -3 ||
-                        ghost.GetChild(i).position.z > 3 || ghost.GetChild(i).position.x < -3)
+                    if (ghost.GetChild(i).position.x > 4 || ghost.GetChild(i).position.x < -4 ||
+                        ghost.GetChild(i).position.z > 4 || ghost.GetChild(i).position.x < -4)
                     {
                         ghost.localEulerAngles = Vector3.zero;
                         cancelRotation = true; // Reset ghost position and reset movement if it would be out of bounds
