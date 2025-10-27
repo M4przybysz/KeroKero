@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     // Time for movement
     float timeToMove = 0.15f;
     float timeToJump = 0.15f;
-    float timeToPressBounce = 0.5f;
+    float timeToPressBounce = 0.25f;
     // Movement bools to check stuff
     int isOnWall = 0; // Collision counter (I know it's not a bool)
     int isInAir = 0;
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Outside"))
         {
             isInAir++;
             if (isJumping && isOnWall > 0) { isOnWall--; }
