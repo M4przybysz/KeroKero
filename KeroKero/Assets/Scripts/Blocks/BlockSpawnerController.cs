@@ -7,8 +7,9 @@ public class BlockSpawnerController : MonoBehaviour
     int spawnRangeZ = 2;
     float firsBlocSpawnkDelay = 1f;
     float blockSpawnDelay = 1.5f;
-    [SerializeField] const int blockCounterMax = 5;
+    public int blockCounterMax = 5;
     int blockCounter;
+    public int levelHeight = 10;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

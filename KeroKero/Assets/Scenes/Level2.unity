@@ -402,6 +402,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 337621826155913529, guid: aa2e7e0c5d06eb944ae7b93efbfe62df, type: 3}
+      propertyPath: levelHeight
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 337621826155913529, guid: aa2e7e0c5d06eb944ae7b93efbfe62df, type: 3}
+      propertyPath: blockCounterMax
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2320074525977682661, guid: aa2e7e0c5d06eb944ae7b93efbfe62df, type: 3}
       propertyPath: m_Name
       value: BlockSpawner

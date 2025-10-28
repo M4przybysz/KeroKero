@@ -6,11 +6,12 @@ public class BlockFall : MonoBehaviour
 {
     float fallingVelocity = 7.5f;
     bool stop = false;
+    int levelHeight;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        levelHeight = GameObject.Find("BlockSpawner").GetComponent<BlockSpawnerController>().levelHeight;
     }
 
     // Update is called once per frame
@@ -40,7 +41,7 @@ public class BlockFall : MonoBehaviour
                     transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
                 }
                 
-                if(transform.position.y > 13) // Destory blocks that aren't in the hole when they stop falling
+                if(transform.position.y > levelHeight + 2) // Destory blocks that aren't in the hole when they stop falling
                 {
                     Destroy(gameObject);
                 }

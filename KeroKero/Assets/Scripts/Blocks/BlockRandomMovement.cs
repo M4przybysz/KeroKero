@@ -1,4 +1,3 @@
-using TreeEditor;
 using UnityEngine;
 
 public class BlockRandomMovement : MonoBehaviour
@@ -8,10 +7,12 @@ public class BlockRandomMovement : MonoBehaviour
     int randomMovementChance = 2; // 1/2 chance to trigger random movement
     int randomRotationChance = 2; // 1/2 chance to trigger random rotation 
     float tickDelay = 0.5f;
+    int levelHeight;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        levelHeight = GameObject.Find("BlockSpawner").GetComponent<BlockSpawnerController>().levelHeight;
         InvokeRepeating(nameof(RandomMovementAndRotation), tickDelay, tickDelay);
     }
 
@@ -30,7 +31,7 @@ public class BlockRandomMovement : MonoBehaviour
 
     void RandomMovementAndRotation()
     {
-        if(!stop && transform.position.y > 13)
+        if(!stop && transform.position.y > levelHeight + 2)
         {
             // bool doMovement = true;
             bool doMovement = (Random.Range(1, randomMovementChance + 1) == 1) ? true : false; // Gample to trigger random movement
