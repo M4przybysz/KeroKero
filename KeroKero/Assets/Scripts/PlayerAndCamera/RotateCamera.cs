@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class RotateCamera : MonoBehaviour
 {
+    [SerializeField] PlayerController playerController;
+
     float targetRotation;
     float speed = 400f;
     int direction = 0;
@@ -18,7 +20,7 @@ public class RotateCamera : MonoBehaviour
     {
         HandleInputs();
 
-        // Move camera
+        // Rotate camera
         if (isMoving)
         {
             transform.Rotate(Vector3.up, direction * speed * Time.deltaTime);
@@ -39,6 +41,7 @@ public class RotateCamera : MonoBehaviour
             direction = 1;
             targetRotation = 90;
             isMoving = true;
+            playerController.RotateDirections(90);
         }
 
         if(Input.GetKeyDown(KeyCode.E) && !isMoving)
@@ -46,6 +49,7 @@ public class RotateCamera : MonoBehaviour
             direction = -1;
             targetRotation = 90;
             isMoving = true;
+            playerController.RotateDirections(-90);
         }
     }
 }
