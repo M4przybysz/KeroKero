@@ -112,6 +112,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("DeathTrigger") && !isMoving && !isJumping && !isBouncing)
+        {
+            GameObject.Find("DeathMenu").GetComponent<DeathMenuController>().ShowDeathMenu();
+        }
+    }
+    
     //=====================================================================================================
     // Custom methods
     //=====================================================================================================
