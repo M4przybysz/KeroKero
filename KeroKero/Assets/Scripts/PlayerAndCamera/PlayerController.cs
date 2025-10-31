@@ -163,6 +163,7 @@ public class PlayerController : MonoBehaviour
         }
         else { transform.position = targetPosition; } // Snap into the position in case something is off
 
+        isMoving = false;
         isMoving = false; // Unmark movement
     }
 
