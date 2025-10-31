@@ -10,6 +10,7 @@ public class BlockSpawnerController : MonoBehaviour
     public int blockCounterMax = 5;
     int blockCounter;
     public int levelHeight = 10;
+    [SerializeField] int basicBlocksNumber, otherBlocksNumber;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,12 +30,12 @@ public class BlockSpawnerController : MonoBehaviour
     {
         // Choose random block and generate random position and rotation for it; 
         int blockIndex;
-        if (blockCounter == 0) 
+        if (blockCounter == 0)
         {
-            blockIndex = Random.Range(3, blocks.Length);
-            blockCounter = 6; 
-        } // Spawn any random block
-        else { blockIndex = Random.Range(0, 3); } // Spawn random "basic" block
+            blockIndex = Random.Range(basicBlocksNumber, basicBlocksNumber + otherBlocksNumber - 1); // Spawn random other block
+            blockCounter = blockCounterMax; 
+        }
+        else { blockIndex = Random.Range(0, basicBlocksNumber); } // Spawn random "basic" block
     
         Vector3 spawnPosition = new Vector3(Random.Range(-spawnRangeX, spawnRangeX+1), transform.position.y, Random.Range(-spawnRangeZ, spawnRangeZ+1));
         Vector3 spawnRotation = new Vector3(90 * Random.Range(-2, 2), 90 * Random.Range(-2, 2), 90 * Random.Range(-2, 2));

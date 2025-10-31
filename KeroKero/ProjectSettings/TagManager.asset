@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Outside
   - GhostBlock
+  - LooseBlock
   layers:
   - Default
   - TransparentFX

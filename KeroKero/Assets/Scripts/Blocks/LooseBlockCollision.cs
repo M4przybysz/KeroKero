@@ -1,10 +1,8 @@
 using System;
 using UnityEngine;
 
-public class BlockFall : MonoBehaviour
+public class LooseBlockCollision : MonoBehaviour
 {
-    float fallingVelocity = 7.5f;
-    bool stop = false;
     int levelHeight;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,18 +14,19 @@ public class BlockFall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!stop) { transform.position += Vector3.down * fallingVelocity * Time.deltaTime; }
-    }
 
+    }
+    
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Block"))
         {
             Vector3 normal = collision.contacts[collision.contactCount - 1].normal;
-            if (normal.y > 0.5f && normal.z < 0.5f && normal.z > -0.5f && normal.x < 0.5f && normal.x > -0.5f)
+            if (normal.y > 0.5f)
             {
-                gameObject.GetComponent<BlockRandomMovement>().StopRandomMovement(); // Stop random movment and rotation
-                stop = true; // Stop falling
+                gameObject.tag = "Block";
+
+                transform.parent = null; // Detach from block to stop falling
 
                 // Snap to position
                 transform.position = new Vector3(
