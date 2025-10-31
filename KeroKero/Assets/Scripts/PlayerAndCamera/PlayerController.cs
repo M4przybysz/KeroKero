@@ -89,6 +89,15 @@ public class PlayerController : MonoBehaviour
     //=====================================================================================================
     void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Outside"))
+        {
+            // Check where the player is colliding with the block
+            Vector3 normal = collision.contacts[collision.contactCount - 1].normal;
+
+            // If player is out of the hole show win menu
+            if (normal.y > 0.5f) { GameObject.Find("WinMenu").GetComponent<WinMenuController>().ShowWinMenu(); } 
+        }
+
         if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Outside"))
         {
             isInAir--;
