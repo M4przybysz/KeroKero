@@ -51,6 +51,12 @@ public class PauseMenuController : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    public void RestartLevel(string levelName)
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(levelName); // Restart current level
+    }
     
     public void QuitToTitleScreen()
     {
