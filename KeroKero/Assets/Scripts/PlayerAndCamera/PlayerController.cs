@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         HandleInputs();
+        print(isMoving + ", " + isJumping + ", " + isInAir);
     }
 
     //=====================================================================================================
@@ -53,31 +54,31 @@ public class PlayerController : MonoBehaviour
     //=====================================================================================================
     void HandleInputs()
     {
-        if (Input.GetKeyDown(KeyCode.W) && !isMoving && !isJumping && isInAir == -1)
+        if (Input.GetKeyDown(KeyCode.W) && !isMoving && !isJumping && isInAir <= -1)
         {
             RotatePlayer("forward");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && !isMoving && !isJumping && isInAir == -1)
+        if (Input.GetKeyDown(KeyCode.S) && !isMoving && !isJumping && isInAir <= -1)
         {
             RotatePlayer("back");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.A) && !isMoving && !isJumping && isInAir == -1)
+        if (Input.GetKeyDown(KeyCode.A) && !isMoving && !isJumping && isInAir <= -1)
         {
             RotatePlayer("left");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && !isMoving && !isJumping && isInAir == -1)
+        if (Input.GetKeyDown(KeyCode.D) && !isMoving && !isJumping && isInAir <= -1)
         {
             RotatePlayer("right");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isMoving && isInAir == -1 && canJump)
+        if (Input.GetKeyDown(KeyCode.Space) && !isMoving && isInAir <= -1 && canJump)
         {
             if (!isJumping) { JumpUp(); }
             if (canBounce) { BounceUp(); }
@@ -101,7 +102,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Outside"))
         {
             isInAir--;
-            if (isInAir == -1) { moveCamera.ChangeCameraHeight(transform.position.y); } // Trigger camera movement
+            if (isInAir <= -1) { moveCamera.ChangeCameraHeight(transform.position.y); } // Trigger camera movement
             if (isJumping) { isOnWall++; }
 
             // Check where the player is colliding with the block
@@ -163,7 +164,6 @@ public class PlayerController : MonoBehaviour
         }
         else { transform.position = targetPosition; } // Snap into the position in case something is off
 
-        isMoving = false;
         isMoving = false; // Unmark movement
     }
 

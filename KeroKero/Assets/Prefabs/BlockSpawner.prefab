@@ -57,3 +57,12 @@ MonoBehaviour:
   - {fileID: 1630504095099132287, guid: 91fc59fd1fce2d741a9fdb5497ced276, type: 3}
   - {fileID: 5314928717251346216, guid: 04ad94e995a41794caefaed246d57f67, type: 3}
   - {fileID: 8869963581804052637, guid: d951b9d1d72121e4c9787fe5b1a9f1bf, type: 3}
+  - {fileID: 3350004287758763384, guid: fc1d92bf334add243ad45eb7740e3892, type: 3}
+  - {fileID: 3350004287758763384, guid: 38658699e2ddccc4d8bc9dad95937a0c, type: 3}
+  - {fileID: 3350004287758763384, guid: f27d5caad43cfe946b4a958cd4cddf35, type: 3}
+  - {fileID: 3350004287758763384, guid: efdbedb655ada4b4e84a4620cb6fdc9b, type: 3}
+  - {fileID: 3350004287758763384, guid: be48c25aad4c2b747ad25a1cffc9df4e, type: 3}
+  blockCounterMax: 3
+  levelHeight: 10
+  basicBlocksNumber: 3
+  otherBlocksNumber: 14
