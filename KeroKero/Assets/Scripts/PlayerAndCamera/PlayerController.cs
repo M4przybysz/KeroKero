@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         HandleInputs();
-        print(isMoving + ", " + isJumping + ", " + isInAir);
+        // print(isMoving + ", " + isJumping + ", " + isInAir);
     }
 
     //=====================================================================================================

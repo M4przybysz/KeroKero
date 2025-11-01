@@ -7,7 +7,7 @@ public class BlockSpawnerController : MonoBehaviour
     int spawnRangeZ = 2;
     float firsBlocSpawnkDelay = 1f;
     float blockSpawnDelay = 1.5f;
-    public int blockCounterMax = 5;
+    public int blockCounterMax;
     int blockCounter;
     public int levelHeight = 10;
     [SerializeField] int basicBlocksNumber, otherBlocksNumber;
@@ -42,6 +42,6 @@ public class BlockSpawnerController : MonoBehaviour
 
         Instantiate(blocks[blockIndex], spawnPosition, Quaternion.Euler(spawnRotation));
 
-        blockCounter -= 1;
+        blockCounter--;
     }
 }
