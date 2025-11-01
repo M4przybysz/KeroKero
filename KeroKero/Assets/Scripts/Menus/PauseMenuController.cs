@@ -3,11 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuController : MonoBehaviour
 {
-    bool isPauseOn = false;
+    public bool isPauseOn {get; private set;}
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        isPauseOn = false;
         ShowOrHideMenu(false);
     }
 

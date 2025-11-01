@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     // Time for movement
     float timeToMove = 0.15f;
     float timeToJump = 0.15f;
-    float timeToPressBounce = 0.25f;
+    float timeToPressBounce = 0.5f;
     // Movement bools to check stuff
     int isOnWall = 0; // Collision counter (I know it's not a bool)
     int isInAir = 0;
