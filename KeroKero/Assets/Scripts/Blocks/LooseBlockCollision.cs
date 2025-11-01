@@ -27,13 +27,14 @@ public class LooseBlockCollision : MonoBehaviour
                 int childCounter = 0;
 
                 // Check other fragments of this loose block
-                for (int i = 0; i < transform.parent.childCount; i++)
+                while (childCounter < transform.parent.childCount)
                 {
                     Transform child = transform.parent.GetChild(childCounter); // Get the child
 
+                    if (child == transform) { childCounter++;  continue; }
+
                     // Check if the child isn't the object that runs this code, if it's a loose block and if it's in the same collumn
-                    if (child != transform &&
-                        child.gameObject.CompareTag("LooseBlock") &&
+                    if (child.gameObject.CompareTag("LooseBlock") &&
                         Mathf.Round(transform.position.x) == Mathf.Round(child.position.x) &&
                         Mathf.Round(transform.position.z) == Mathf.Round(child.position.z) )
                     {

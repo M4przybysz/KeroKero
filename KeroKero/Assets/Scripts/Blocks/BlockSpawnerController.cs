@@ -33,11 +33,17 @@ public class BlockSpawnerController : MonoBehaviour
         if (blockCounter == 0)
         {
             blockIndex = Random.Range(basicBlocksNumber, basicBlocksNumber + otherBlocksNumber - 1); // Spawn random other block
-            blockCounter = blockCounterMax; 
+            blockCounter = blockCounterMax;
         }
         else { blockIndex = Random.Range(0, basicBlocksNumber); } // Spawn random "basic" block
-    
-        Vector3 spawnPosition = new Vector3(Random.Range(-spawnRangeX, spawnRangeX+1), transform.position.y, Random.Range(-spawnRangeZ, spawnRangeZ+1));
+
+        int positionX = Random.Range(1, spawnRangeX + 1);
+        positionX *= Random.Range(0, 2) == 0 ? -1 : 1;
+
+        int positionZ = Random.Range(1, spawnRangeZ + 1);
+        positionZ *= Random.Range(0, 2) == 0 ? -1 : 1;
+
+        Vector3 spawnPosition = new Vector3(positionX, transform.position.y, positionZ);
         Vector3 spawnRotation = new Vector3(90 * Random.Range(-2, 2), 90 * Random.Range(-2, 2), 90 * Random.Range(-2, 2));
 
         Instantiate(blocks[blockIndex], spawnPosition, Quaternion.Euler(spawnRotation));
