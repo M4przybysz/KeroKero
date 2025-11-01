@@ -8,9 +8,13 @@ using UnityEditor;
 
 public class MainMenuController : MonoBehaviour
 {
+    [SerializeField] GameObject credits;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        ShowOrHideCredits(false);
+
         // Unlock and show cursor
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -23,6 +27,11 @@ public class MainMenuController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         SceneManager.LoadScene(levelName); // Load level
+    }
+
+    public void ShowOrHideCredits(bool showOrHide) // true == show, false == hide
+    {
+        credits.SetActive(showOrHide);
     }
 
     public void QuitGame()
