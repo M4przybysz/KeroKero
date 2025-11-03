@@ -4,6 +4,7 @@ using UnityEngine;
 public class LooseBlockCollision : MonoBehaviour
 {
     int levelHeight;
+    [SerializeField] GameObject spotLight;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,6 +54,8 @@ public class LooseBlockCollision : MonoBehaviour
         gameObject.tag = "Block";
 
         transform.parent = null; // Detach from block to stop falling
+
+        if (spotLight != null) { Destroy(spotLight); } // Turn off the light
 
         // Snap to position
         transform.position = new Vector3(
