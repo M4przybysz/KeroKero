@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5714680724878851224}
   - component: {fileID: 2959989101955823526}
   - component: {fileID: 7678983118095504259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 5574342067840872104}
   - component: {fileID: 6394686693281839808}
   - component: {fileID: 8061083372493296995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger (3)
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 1676362267302008156}
   - component: {fileID: 5706614699391778645}
   - component: {fileID: 115356149554441172}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger (1)
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 369981307875834850}
   - component: {fileID: 5599972885622104619}
   - component: {fileID: 8171690175093882638}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 1091984849471754050}
   - component: {fileID: 3138454531720622551}
   - component: {fileID: 102431738707841839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostBlock (2)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 5350165043543891366}
   - component: {fileID: 1301833811576559087}
   - component: {fileID: 8197253172714980775}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger (4)
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 445014938376259298}
   - component: {fileID: 4751519432684989858}
   - component: {fileID: 3916756032030462756}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostBlock (5)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -794,7 +794,7 @@ GameObject:
   - component: {fileID: 368382182994056925}
   - component: {fileID: 8630270981417453106}
   - component: {fileID: 7047330913666991034}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger (6)
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 6252062281967523257}
   - component: {fileID: 690719314640964565}
   - component: {fileID: 6118832941869925917}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostBlock (3)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -1010,7 +1010,7 @@ GameObject:
   - component: {fileID: 4968328512506899328}
   - component: {fileID: 3537859353456966798}
   - component: {fileID: 3518514020527726445}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1144,7 +1144,7 @@ GameObject:
   - component: {fileID: 6124668027851659330}
   - component: {fileID: 4114671764633853281}
   - component: {fileID: 5696543342524098070}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger (2)
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -1249,7 +1249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8249136416456142291}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1289,7 +1289,7 @@ GameObject:
   - component: {fileID: 5470735993925731306}
   - component: {fileID: 7167802908536890896}
   - component: {fileID: 5984997312115723904}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1423,7 +1423,7 @@ GameObject:
   - component: {fileID: 1384086320431526494}
   - component: {fileID: 1643843327816218114}
   - component: {fileID: 3311477859969819379}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1557,7 +1557,7 @@ GameObject:
   - component: {fileID: 6410278132127955910}
   - component: {fileID: 2048528430566031176}
   - component: {fileID: 9196594167621957458}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger (5)
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -1665,7 +1665,7 @@ GameObject:
   - component: {fileID: 4605136675162515423}
   - component: {fileID: 2172366526975015895}
   - component: {fileID: 4648458141323305565}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostBlock (4)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -1773,7 +1773,7 @@ GameObject:
   - component: {fileID: 3664575636841084029}
   - component: {fileID: 7085314663069579071}
   - component: {fileID: 1554184884951386488}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1907,7 +1907,7 @@ GameObject:
   - component: {fileID: 4941137480380830297}
   - component: {fileID: 674121408427841557}
   - component: {fileID: 4288692926272210765}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostBlock (1)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -2015,7 +2015,7 @@ GameObject:
   - component: {fileID: 3886613862919061430}
   - component: {fileID: 947580960513042087}
   - component: {fileID: 5061416816266567481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2146,7 +2146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6419789400078646259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2186,7 +2186,7 @@ GameObject:
   - component: {fileID: 292204436948503713}
   - component: {fileID: 2765807384650222199}
   - component: {fileID: 7148166940164478454}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostBlock
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -2353,6 +2353,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 939ad14dca5ba694286a47e32d4edffe, type: 3}
       propertyPath: m_Name
       value: Star
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 939ad14dca5ba694286a47e32d4edffe, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 939ad14dca5ba694286a47e32d4edffe, type: 3}
       propertyPath: m_TagString

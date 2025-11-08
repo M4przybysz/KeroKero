@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5990062505144680480}
   - component: {fileID: 5020343957857343981}
   - component: {fileID: 5078214987233681743}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2560245833879133915}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 6523503945730384341}
   - component: {fileID: 1812124708931282457}
   - component: {fileID: 5133843927858463265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 8026494086508406505}
   - component: {fileID: 3352886812774627976}
   - component: {fileID: 5060133610195791541}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 1435037460498596029}
   - component: {fileID: 7404083088179818397}
   - component: {fileID: 6337495248576777266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 1371936816709987869}
   - component: {fileID: 3382619407492693591}
   - component: {fileID: 2518175283377925841}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger (2)
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 4890395310050975649}
   - component: {fileID: 7775480894356984242}
   - component: {fileID: 7742942053931171870}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostBlock (1)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -772,7 +772,7 @@ GameObject:
   - component: {fileID: 4077427304367322811}
   - component: {fileID: 8235301451740059745}
   - component: {fileID: 2760628608448687179}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostBlock
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -880,7 +880,7 @@ GameObject:
   - component: {fileID: 92743722263117689}
   - component: {fileID: 6242645453873847603}
   - component: {fileID: 7653624411336753361}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostBlock (2)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -988,7 +988,7 @@ GameObject:
   - component: {fileID: 6414888660882012576}
   - component: {fileID: 7873101531868838015}
   - component: {fileID: 6653111940100421788}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger (1)
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -1093,7 +1093,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5195101578509038611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1189,6 +1189,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9acc78ab0c4605d4d812309af44f9f6c, type: 3}
       propertyPath: m_Name
       value: 1x3x1_I_Shape
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9acc78ab0c4605d4d812309af44f9f6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9acc78ab0c4605d4d812309af44f9f6c, type: 3}
       propertyPath: m_TagString

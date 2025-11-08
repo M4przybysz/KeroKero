@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5502943167849226517}
   - component: {fileID: 3344183462426735818}
   - component: {fileID: 3621597246545459349}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 8121035474628492036}
   - component: {fileID: 3230689388690750861}
   - component: {fileID: 4423229133006676037}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 721309707958686283}
   - component: {fileID: 7340280370443353778}
   - component: {fileID: 6830533106063693171}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostBlock (3)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 7798587478122646019}
   - component: {fileID: 4461278029776285839}
   - component: {fileID: 916823952222022208}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 1786173934584526400}
   - component: {fileID: 7210801634731000725}
   - component: {fileID: 716177627909513802}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,7 +601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2457006655077985740}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 6298103282592482223}
   - component: {fileID: 5629061938726165118}
   - component: {fileID: 6010639555042590443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Loose_T_Shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,7 +702,7 @@ GameObject:
   - component: {fileID: 7743692042873146486}
   - component: {fileID: 3750651487284715959}
   - component: {fileID: 3798491236029780987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostBlock (2)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -810,7 +810,7 @@ GameObject:
   - component: {fileID: 6933512540512167123}
   - component: {fileID: 756750972511896324}
   - component: {fileID: 2511087744069260107}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -944,7 +944,7 @@ GameObject:
   - component: {fileID: 1680032753299156249}
   - component: {fileID: 4980564181249599656}
   - component: {fileID: 490656456674451095}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostBlock
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -1052,7 +1052,7 @@ GameObject:
   - component: {fileID: 6207966081293877890}
   - component: {fileID: 3874131436716469174}
   - component: {fileID: 7882071827842439085}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1186,7 +1186,7 @@ GameObject:
   - component: {fileID: 6147591883976965491}
   - component: {fileID: 4951945518668238970}
   - component: {fileID: 2585001825167891099}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -1294,7 +1294,7 @@ GameObject:
   - component: {fileID: 7879424313101056230}
   - component: {fileID: 6907495891362649336}
   - component: {fileID: 5471860149307638659}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -1402,7 +1402,7 @@ GameObject:
   - component: {fileID: 2300231227223089974}
   - component: {fileID: 6507335355589943456}
   - component: {fileID: 3410630425123689858}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostBlock (1)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -1562,9 +1562,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aa006141d0ea9cf41abeaf526c25f24f, type: 2}
     - target: {fileID: 919132149155446097, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
       propertyPath: m_Name
       value: Block (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
       propertyPath: m_TagString
@@ -1725,9 +1733,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aa006141d0ea9cf41abeaf526c25f24f, type: 2}
     - target: {fileID: 919132149155446097, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
       propertyPath: m_Name
       value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
       propertyPath: m_TagString
@@ -1888,9 +1904,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aa006141d0ea9cf41abeaf526c25f24f, type: 2}
     - target: {fileID: 919132149155446097, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
       propertyPath: m_Name
       value: Block (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
       propertyPath: m_TagString
@@ -2051,9 +2075,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aa006141d0ea9cf41abeaf526c25f24f, type: 2}
     - target: {fileID: 919132149155446097, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
       propertyPath: m_Name
       value: Block (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
       propertyPath: m_TagString

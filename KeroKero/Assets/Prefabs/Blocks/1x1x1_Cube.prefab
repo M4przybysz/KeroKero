@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6542631668308045722}
   - component: {fileID: 6875865022632915113}
   - component: {fileID: 8748098172124570701}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4088766025209195416}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 2645752882409527544}
   - component: {fileID: 8682236670313973549}
   - component: {fileID: 6165818080003312434}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostBlock
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 2625476302850472191}
   - component: {fileID: 1530846143864636488}
   - component: {fileID: 6513670727266804464}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -453,6 +453,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
       propertyPath: m_Name
       value: 1x1x1_Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9d76408d78525724793486cc9e8fbd3a, type: 3}
       propertyPath: m_TagString

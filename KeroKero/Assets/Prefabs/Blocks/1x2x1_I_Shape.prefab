@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6127111216634153373}
   - component: {fileID: 6039484410527210546}
   - component: {fileID: 5255253411354658563}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 6862666195539989856}
   - component: {fileID: 3967495247668169557}
   - component: {fileID: 175933100632152578}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5003636666633185019}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 7447257957579873924}
   - component: {fileID: 4375726156102975250}
   - component: {fileID: 5249902389881096713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpotLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 7597136085885503364}
   - component: {fileID: 8210411173874628180}
   - component: {fileID: 6655576797379496509}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeathTrigger (1)
   m_TagString: DeathTrigger
   m_Icon: {fileID: 0}
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 2469112037622523458}
   - component: {fileID: 6877704157764598953}
   - component: {fileID: 7777025290593252293}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostBlock (1)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6283579720825072129}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +670,7 @@ GameObject:
   - component: {fileID: 8349123155860044067}
   - component: {fileID: 4624853638034613038}
   - component: {fileID: 6502731070861419185}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostBlock
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -837,6 +837,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 08f55241aa912174e9dc0690f3ad49e0, type: 3}
       propertyPath: m_Name
       value: 1x2x1_I_Shape
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 08f55241aa912174e9dc0690f3ad49e0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 08f55241aa912174e9dc0690f3ad49e0, type: 3}
       propertyPath: m_TagString
