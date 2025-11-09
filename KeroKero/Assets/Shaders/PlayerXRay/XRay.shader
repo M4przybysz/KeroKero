@@ -4,14 +4,14 @@ Shader "Custom/XRay"
     {
         [NoScaleOffset]_Main_Texture("Main Texture", 2D) = "white" {}
         _Tint("Tint", Color) = (0, 0, 0, 0)
+        [NoScaleOffset]_Normal_Map("Normal Map", 2D) = "white" {}
+        _Texture_Tiling("Texture Tiling", Vector) = (1, 1, 0, 0)
+        _Texture_Offset("Texture Offset", Vector) = (0, 0, 0, 0)
         _Size("Size", Float) = 1
         _Smoothness("Smoothness", Range(0, 1)) = 0.5
         _Opacity("Opacity", Range(0, 1)) = 1
-        [NoScaleOffset]_Normal_Map("Normal Map", 2D) = "white" {}
-        _Player_Position("Player Position", Vector) = (0.5, 0.5, 0, 0)
-        _Texture_Tiling("Texture Tiling", Vector) = (1, 1, 0, 0)
-        _Texture_Offset("Texture Offset", Vector) = (0, 0, 0, 0)
-        _Player_Distance("Player Distance", Float) = 0
+        [HideInInspector]_Player_Position("Player Position", Vector) = (0.5, 0.5, 0, 0)
+        [HideInInspector]_Player_Distance("Player Distance", Float) = 0
         [HideInInspector]_WorkflowMode("_WorkflowMode", Float) = 1
         [HideInInspector]_CastShadows("_CastShadows", Float) = 1
         [HideInInspector]_ReceiveShadows("_ReceiveShadows", Float) = 1
