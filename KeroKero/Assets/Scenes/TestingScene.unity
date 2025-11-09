@@ -119,28 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &290552798 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4257568104210124734, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
-  m_PrefabInstance: {fileID: 7727390249377032242}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &290552802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 290552798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebb7893533b578d4c8a521c7a1b3adc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wallMaterial: {fileID: 2100000, guid: aa006141d0ea9cf41abeaf526c25f24f, type: 2}
-  mainCamera: {fileID: 709969974}
-  mask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!1 &310023083
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,11 +319,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 2
---- !u!20 &709969974 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 4566802612173645791, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
-  m_PrefabInstance: {fileID: 7727390249377032242}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,10 +918,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 322855853920656842, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
-      propertyPath: mask.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: 881148821535996620, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
       propertyPath: m_Name
       value: PlayerAndCamera
@@ -996,10 +965,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4257568104210124734, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 290552802}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
 --- !u!4 &7727390249377032243 stripped
 Transform:

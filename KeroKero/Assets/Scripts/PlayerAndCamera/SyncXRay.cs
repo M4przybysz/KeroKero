@@ -3,6 +3,7 @@ using UnityEngine;
 public class SyncXRay : MonoBehaviour
 {
     public static int posID = Shader.PropertyToID("_Player_Position");
+    public static int distanceID = Shader.PropertyToID("_Player_Distance");
     public static int sizeID = Shader.PropertyToID("_Size");
 
     [SerializeField] Material wallMaterial;
@@ -32,5 +33,8 @@ public class SyncXRay : MonoBehaviour
 
         Vector3 view = mainCamera.WorldToViewportPoint(transform.position);
         wallMaterial.SetVector(posID, view);
+
+        float distanceToCamera = Vector3.Distance(transform.position, mainCamera.transform.position);
+        wallMaterial.SetFloat(distanceID, distanceToCamera);
     }
 }
