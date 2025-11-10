@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class WinMenuController : MonoBehaviour
 {
+    [SerializeField] int unlockLevels;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,6 +33,9 @@ public class WinMenuController : MonoBehaviour
 
         ShowOrHideMenu(true); // Show or hide pause menu
         Time.timeScale = 0; // Stop or resume gameplay;
+
+        // Update completed levels
+        if(GameManager.Instance.LevelsCompleted < unlockLevels) { GameManager.Instance.LevelsCompleted = unlockLevels; }
     }
 
     public void LoadLevel(string levelName)

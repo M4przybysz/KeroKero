@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -8,11 +8,16 @@ using UnityEditor;
 
 public class MainMenuController : MonoBehaviour
 {
+    [SerializeField] GameObject[] levelButtons;
+    bool areLevelsUnlocked;
     [SerializeField] GameObject credits;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        LoadLevelButtons();
+        areLevelsUnlocked = false;
         ShowOrHideCredits(false);
 
         // Unlock and show cursor
@@ -27,6 +32,26 @@ public class MainMenuController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         SceneManager.LoadScene(levelName); // Load level
+    }
+
+    void LoadLevelButtons()
+    {
+        // Show or hide level buttons
+        for (int i = 0; i < levelButtons.Length && i <= GameManager.Instance.LevelsCompleted; i++)
+        {
+            levelButtons[i].GetComponent<Button>().interactable = true;
+        }
+    }
+
+    public void UnlockOrLockAllLevels() // true == unlock, false = lock
+    {
+        areLevelsUnlocked = !areLevelsUnlocked;
+
+        // Show or hide level buttons
+        for (int i = GameManager.Instance.LevelsCompleted + 1; i < levelButtons.Length; i++)
+        {
+            levelButtons[i].GetComponent<Button>().interactable = areLevelsUnlocked;
+        }
     }
 
     public void ShowOrHideCredits(bool showOrHide) // true == show, false == hide
