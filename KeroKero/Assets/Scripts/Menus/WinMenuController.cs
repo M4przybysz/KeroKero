@@ -35,7 +35,11 @@ public class WinMenuController : MonoBehaviour
         Time.timeScale = 0; // Stop or resume gameplay;
 
         // Update completed levels
-        if(GameManager.Instance.LevelsCompleted < unlockLevels) { GameManager.Instance.LevelsCompleted = unlockLevels; }
+        if (GameManager.Instance.LevelsCompleted < unlockLevels)
+        {
+            GameManager.Instance.LevelsCompleted = unlockLevels;
+            GameManager.Instance.SavePlayerData();
+        }
     }
 
     public void LoadLevel(string levelName)
