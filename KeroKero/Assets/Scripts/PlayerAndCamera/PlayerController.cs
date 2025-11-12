@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] Animator frogAnimator;
     [SerializeField] MoveCamera moveCamera;
     Dictionary<string, float> directions = new Dictionary<string, float> // WSAD movement directions
     {
@@ -80,7 +81,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && !isMoving && isInAir <= -1 && canJump)
         {
-            if (!isJumping) { JumpUp(); }
+            if (!isJumping)
+            {
+                frogAnimator.SetTrigger("JumpTrigger");
+                JumpUp(); 
+            }
             if (canBounce) { BounceUp(); }
         }
     }

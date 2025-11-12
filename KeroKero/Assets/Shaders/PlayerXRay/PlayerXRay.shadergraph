@@ -951,8 +951,8 @@
     "m_ObjectId": "01f23bb5ec284517b6ee1906b6c2cb9e",
     "m_Title": "Size correction",
     "m_Position": {
-        "x": -1888.7999267578125,
-        "y": 876.0001220703125
+        "x": -1888.8001708984375,
+        "y": 875.9999389648438
     }
 }
 
@@ -1216,7 +1216,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 1.0,
+    "m_Value": 1.5,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
@@ -2397,8 +2397,8 @@
     "m_ObjectId": "462ef5d9ea7143038740ee670fedb762",
     "m_Title": "Circle XRay",
     "m_Position": {
-        "x": -953.599853515625,
-        "y": 428.0001220703125
+        "x": -953.60009765625,
+        "y": 427.9999694824219
     }
 }
 
@@ -4089,7 +4089,7 @@
     "m_ObjectId": "926272ee8603450fb49e433453e3c34c",
     "m_Title": "Texture and Tint",
     "m_Position": {
-        "x": -306.39990234375,
+        "x": -306.40008544921877,
         "y": -525.5999755859375
     }
 }
@@ -4289,8 +4289,8 @@
     "m_ObjectId": "9e2a311c7b13491b8dbe03a613a6d7cd",
     "m_Title": "Distance fix",
     "m_Position": {
-        "x": -268.7998352050781,
-        "y": 957.6002807617188
+        "x": -268.800048828125,
+        "y": 957.6001586914063
     }
 }
 
@@ -4300,7 +4300,7 @@
     "m_ObjectId": "a2c1b1ace4224543a380753e24a53934",
     "m_Title": "Normal map",
     "m_Position": {
-        "x": -303.2001647949219,
+        "x": -303.1999816894531,
         "y": -79.20001220703125
     }
 }
@@ -6486,8 +6486,8 @@
     "m_ObjectId": "f508a7730b6048d6bd3debe516adec65",
     "m_Title": "Screen UV",
     "m_Position": {
-        "x": -2001.5999755859375,
-        "y": 225.60008239746095
+        "x": -2001.60009765625,
+        "y": 225.60000610351563
     }
 }
 
