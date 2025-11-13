@@ -129,7 +129,7 @@ Material:
     - _OcclusionStrength: 1
     - _Opacity: 0.85
     - _Parallax: 0.005
-    - _Player_Distance: 7.8994017
+    - _Player_Distance: 144.91797
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -149,7 +149,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Player_Position: {r: 0.44492847, g: 0.324919, b: 7.695656, a: 0}
+    - _Player_Position: {r: 0.49218503, g: -0.013074756, b: 124.667755, a: 0}
     - _Player_Position_3D: {r: 0.73472923, g: 0.5262949, b: 8.550332, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Texture_Offset: {r: -0.5, g: 0, b: 0, a: 0}
