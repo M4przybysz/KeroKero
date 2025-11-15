@@ -635,7 +635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb7893533b578d4c8a521c7a1b3adc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallMaterials:
+  blockMaterials:
   - {fileID: 2100000, guid: aa006141d0ea9cf41abeaf526c25f24f, type: 2}
   - {fileID: 2100000, guid: 41b36ef2e26fa5549afc98b9e88b0469, type: 2}
   - {fileID: 2100000, guid: bcaaec359e76bc74f9e5f537528a8fa8, type: 2}
@@ -645,7 +645,7 @@ MonoBehaviour:
   mainCamera: {fileID: 4566802612173645791}
   mask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!95 &7231108559170051838
 Animator:
   serializedVersion: 7
@@ -775,7 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb7893533b578d4c8a521c7a1b3adc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallMaterials: []
+  blockMaterials: []
   mainCamera: {fileID: 4566802612173645791}
   mask:
     serializedVersion: 2
