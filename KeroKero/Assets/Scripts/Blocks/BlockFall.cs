@@ -18,6 +18,7 @@ public class BlockFall : MonoBehaviour
     void Update()
     {
         if (!stop) { transform.position += Vector3.down * fallingVelocity * Time.deltaTime; }
+        if (transform.position.y < -10) { Destroy(gameObject); }
     }
 
     void OnCollisionEnter(Collision collision)

@@ -15,7 +15,7 @@ public class LooseBlockFall : MonoBehaviour
     {
         transform.position += Vector3.down * fallingVelocity * Time.deltaTime;
 
-        if(transform.childCount == 1)
+        if(transform.childCount == 1 || transform.position.y < -10)
         {
             Destroy(gameObject);
         }
