@@ -176,7 +176,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Developed by Rechotki
+  m_text: "Game created by Team Rechotki. \r\n\r\nLiami Chleborowicz - leader, project
+    manager\r\nAdam Guzik - 2D artist, sound designer\r\nMaciej Przyby\u0142 - programmer\r\nAlina
+    Osi\u0144ska - 3D artist, animator\r\nMykhailo Kulinich - 3D artist\r\n\r\nGame
+    was tested by Game research and design students from UKW.\r\n\nThanks for playing! "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -203,8 +206,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
