@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     float timeToJump = 0.15f;
     float timeToPressBounce = 0.5f;
     // Movement bools to check stuff
-    int isOnWall = 0; // Collision counter (I know it's not a bool)
+    int isOnWall = 0; // Collision counter
     int isInAir = 0;
     bool isMoving = false;
     bool resetMovement = false;
@@ -86,7 +86,11 @@ public class PlayerController : MonoBehaviour
                 frogAnimator.SetTrigger("JumpTrigger");
                 JumpUp(); 
             }
-            if (canBounce) { BounceUp(); }
+            if (canBounce) 
+            { 
+                frogAnimator.SetTrigger("JumpTrigger");
+                BounceUp(); 
+            }
         }
     }
 
@@ -145,6 +149,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator MovePlayerOnGrid() // Move player on the 2D grid
     {
+        frogAnimator.SetTrigger("MovementTrigger");
         isMoving = true; // Mark movement
         float elapsedTime = 0f; // Start counting time
 

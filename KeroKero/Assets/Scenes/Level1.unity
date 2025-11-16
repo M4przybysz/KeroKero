@@ -1132,22 +1132,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerAndCamera
       objectReference: {fileID: 0}
-    - target: {fileID: 4889086472972912217, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889086472972912217, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
-      propertyPath: mask.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889086472972912217, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
-      propertyPath: blockMaterials.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889086472972912217, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
-      propertyPath: 'blockMaterials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5184893110649831140, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1188,13 +1172,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6396738260609166918, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
-      propertyPath: frogAnimator
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 774460528394474763, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
