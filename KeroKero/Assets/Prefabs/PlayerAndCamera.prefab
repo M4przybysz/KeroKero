@@ -642,6 +642,12 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 23cfa5d286904cc468c3aed3937b1634, type: 2}
   - {fileID: 2100000, guid: 5b3b004ee95e1c343b548eadfa4d41c8, type: 2}
   - {fileID: 2100000, guid: 88736b0e754e43745b4230ab997946cd, type: 2}
+  - {fileID: 2100000, guid: 3da3f5912c56f4646bdf869b57743f0c, type: 2}
+  - {fileID: 2100000, guid: e06ef6214301fcc4983a0aea2f16493f, type: 2}
+  - {fileID: 2100000, guid: 661dccc6a7fc89840a5c82a13f38cb65, type: 2}
+  - {fileID: 2100000, guid: 721a66838072be14bad666b297eac44c, type: 2}
+  - {fileID: 2100000, guid: f4c910ae70b44da49b87ee59cc14ac94, type: 2}
+  - {fileID: 2100000, guid: 4096e6ceef215794580b6f07ee40c6ad, type: 2}
   mainCamera: {fileID: 4566802612173645791}
   mask:
     serializedVersion: 2
