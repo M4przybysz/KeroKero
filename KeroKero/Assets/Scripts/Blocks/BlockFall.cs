@@ -1,9 +1,9 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
 public class BlockFall : MonoBehaviour
 {
+    [SerializeField] GameObject lights;
     float fallingVelocity = 7.5f;
     bool stop = false;
     int levelHeight;
@@ -18,6 +18,7 @@ public class BlockFall : MonoBehaviour
     void Update()
     {
         if (!stop) { transform.position += Vector3.down * fallingVelocity * Time.deltaTime; }
+        if (transform.position.y < -10) { Destroy(gameObject); }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -30,16 +31,13 @@ public class BlockFall : MonoBehaviour
                 gameObject.GetComponent<BlockRandomMovement>().StopRandomMovement(); // Stop random movment and rotation
                 stop = true; // Stop falling
 
+                Destroy(lights); // Turn off the lights
+
                 // Snap to position
                 transform.position = new Vector3(
                     transform.position.x,
                     (float)Math.Round(transform.position.y - 0.5f) + 0.5f,
                     transform.position.z);
-
-                if (transform.position.y % 2 == 0) // Bug fix
-                {
-                    transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
-                }
 
                 if (transform.position.y > levelHeight + 2) // Destory blocks that aren't in the hole when they stop falling
                 {

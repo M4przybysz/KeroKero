@@ -36,7 +36,11 @@ public class RotateCamera : MonoBehaviour
 
     void HandleInputs() 
     {
-        if (Input.GetKeyDown(KeyCode.Q) && !isMoving)
+        if ((Input.GetKeyDown(KeyCode.Q) ||
+            Input.GetKeyDown(KeyCode.LeftArrow) ||
+            Input.GetKeyDown(KeyCode.Mouse0)) &&
+            !isMoving &&
+            GameObject.Find("PauseMenu").GetComponent<PauseMenuController>().isPauseOn == false)
         {
             direction = 1;
             targetRotation = 90;
@@ -44,7 +48,11 @@ public class RotateCamera : MonoBehaviour
             playerController.RotateDirections(90);
         }
 
-        if(Input.GetKeyDown(KeyCode.E) && !isMoving)
+        if((Input.GetKeyDown(KeyCode.E) ||
+            Input.GetKeyDown(KeyCode.RightArrow) ||
+            Input.GetKeyDown(KeyCode.Mouse1)) &&
+            !isMoving &&
+            GameObject.Find("PauseMenu").GetComponent<PauseMenuController>().isPauseOn == false)
         {
             direction = -1;
             targetRotation = 90;

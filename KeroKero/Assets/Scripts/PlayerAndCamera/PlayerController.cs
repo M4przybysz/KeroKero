@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] Animator frogAnimator;
     [SerializeField] MoveCamera moveCamera;
     Dictionary<string, float> directions = new Dictionary<string, float> // WSAD movement directions
     {
@@ -21,9 +22,9 @@ public class PlayerController : MonoBehaviour
     // Time for movement
     float timeToMove = 0.15f;
     float timeToJump = 0.15f;
-    float timeToPressBounce = 0.25f;
+    float timeToPressBounce = 0.5f;
     // Movement bools to check stuff
-    int isOnWall = 0; // Collision counter (I know it's not a bool)
+    int isOnWall = 0; // Collision counter
     int isInAir = 0;
     bool isMoving = false;
     bool resetMovement = false;
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         HandleInputs();
+        // print(isMoving + ", " + isJumping + ", " + isInAir);
     }
 
     //=====================================================================================================
@@ -53,34 +55,42 @@ public class PlayerController : MonoBehaviour
     //=====================================================================================================
     void HandleInputs()
     {
-        if (Input.GetKeyDown(KeyCode.W) && !isMoving && !isJumping && isInAir == -1)
+        if (Input.GetKeyDown(KeyCode.W) && !isMoving && !isJumping && isInAir <= -1)
         {
             RotatePlayer("forward");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && !isMoving && !isJumping && isInAir == -1)
+        if (Input.GetKeyDown(KeyCode.S) && !isMoving && !isJumping && isInAir <= -1)
         {
             RotatePlayer("back");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.A) && !isMoving && !isJumping && isInAir == -1)
+        if (Input.GetKeyDown(KeyCode.A) && !isMoving && !isJumping && isInAir <= -1)
         {
             RotatePlayer("left");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && !isMoving && !isJumping && isInAir == -1)
+        if (Input.GetKeyDown(KeyCode.D) && !isMoving && !isJumping && isInAir <= -1)
         {
             RotatePlayer("right");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isMoving && isInAir == -1 && canJump)
+        if (Input.GetKeyDown(KeyCode.Space) && !isMoving && isInAir <= -1 && canJump)
         {
-            if (!isJumping) { JumpUp(); }
-            if (canBounce) { BounceUp(); }
+            if (!isJumping)
+            {
+                frogAnimator.SetTrigger("JumpTrigger");
+                JumpUp(); 
+            }
+            if (canBounce) 
+            { 
+                frogAnimator.SetTrigger("JumpTrigger");
+                BounceUp(); 
+            }
         }
     }
 
@@ -89,10 +99,19 @@ public class PlayerController : MonoBehaviour
     //=====================================================================================================
     void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Outside"))
+        {
+            // Check where the player is colliding with the block
+            Vector3 normal = collision.contacts[collision.contactCount - 1].normal;
+
+            // If player is out of the hole show win menu
+            if (normal.y > 0.5f) { GameObject.Find("WinMenu").GetComponent<WinMenuController>().ShowWinMenu(); } 
+        }
+
         if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Outside"))
         {
             isInAir--;
-            if (isInAir == -1) { moveCamera.ChangeCameraHeight(transform.position.y); } // Trigger camera movement
+            if (isInAir <= -1) { moveCamera.ChangeCameraHeight(transform.position.y); } // Trigger camera movement
             if (isJumping) { isOnWall++; }
 
             // Check where the player is colliding with the block
@@ -112,6 +131,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("DeathTrigger") && !isMoving && !isJumping && !isBouncing)
+        {
+            GameObject.Find("DeathMenu").GetComponent<DeathMenuController>().ShowDeathMenu();
+        }
+    }
+    
     //=====================================================================================================
     // Custom methods
     //=====================================================================================================
@@ -122,6 +149,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator MovePlayerOnGrid() // Move player on the 2D grid
     {
+        frogAnimator.SetTrigger("MovementTrigger");
         isMoving = true; // Mark movement
         float elapsedTime = 0f; // Start counting time
 
