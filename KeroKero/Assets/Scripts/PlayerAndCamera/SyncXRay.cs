@@ -6,7 +6,7 @@ public class SyncXRay : MonoBehaviour
     public static int distanceID = Shader.PropertyToID("_Player_Distance");
     public static int sizeID = Shader.PropertyToID("_Size");
 
-    [SerializeField] Material wallMaterial;
+    [SerializeField] Material[] blockMaterials;
     [SerializeField] Camera mainCamera;
     [SerializeField] LayerMask mask;
 
@@ -24,17 +24,17 @@ public class SyncXRay : MonoBehaviour
 
         if (Physics.Raycast(ray, 3000, mask))
         {
-            wallMaterial.SetFloat(sizeID, 1);
+            foreach(Material bm in blockMaterials) { bm.SetFloat(sizeID, 1); }
         }
         else
         {
-            wallMaterial.SetFloat(sizeID, 0);
+            foreach(Material bm in blockMaterials) { bm.SetFloat(sizeID, 0); }
         }
 
         Vector3 view = mainCamera.WorldToViewportPoint(transform.position);
-        wallMaterial.SetVector(posID, view);
+        foreach(Material bm in blockMaterials) { bm.SetVector(posID, view); }
 
         float distanceToCamera = Vector3.Distance(transform.position, mainCamera.transform.position);
-        wallMaterial.SetFloat(distanceID, distanceToCamera);
+        foreach(Material bm in blockMaterials) { bm.SetFloat(distanceID, distanceToCamera); }
     }
 }
