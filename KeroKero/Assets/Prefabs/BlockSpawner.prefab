@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2320074525977682661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7429756350115238227}
+  - component: {fileID: 337621826155913529}
+  m_Layer: 0
+  m_Name: BlockSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7429756350115238227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2320074525977682661}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 30, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &337621826155913529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2320074525977682661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd8c60ba4a60dd43b50a66ff30468b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blocks:
+  - {fileID: 1640762750837574859, guid: 87348d7f66f0f7547bdac1140bf301ed, type: 3}
+  - {fileID: 2458455474434179628, guid: 0870138a3c4524849964f872a0e85aaa, type: 3}
+  - {fileID: 2677745467046881474, guid: c295a71e76587764d9042efdcc7f7ed1, type: 3}
+  - {fileID: 7680551707262112905, guid: f0d86e70fb791214c858daf0ea9dc8ff, type: 3}
+  - {fileID: 7264132875832508108, guid: 716bf0f6e5787e745ab925ce65358103, type: 3}
+  - {fileID: 1851351178363769745, guid: ca6fd38c916fb0a4eb3a193b647e2275, type: 3}
+  - {fileID: 6850524432075598638, guid: 27a31c254141ffa46b5891c5136df994, type: 3}
+  - {fileID: 890861172087137235, guid: 986b999e4878d4f469aa546401715d83, type: 3}
+  - {fileID: 5914457495070488141, guid: a9095397e271de340a01525f9cfa10da, type: 3}
+  - {fileID: 1630504095099132287, guid: 91fc59fd1fce2d741a9fdb5497ced276, type: 3}
+  - {fileID: 5314928717251346216, guid: 04ad94e995a41794caefaed246d57f67, type: 3}
+  - {fileID: 8869963581804052637, guid: d951b9d1d72121e4c9787fe5b1a9f1bf, type: 3}
+  - {fileID: 3350004287758763384, guid: fc1d92bf334add243ad45eb7740e3892, type: 3}
+  - {fileID: 3350004287758763384, guid: 38658699e2ddccc4d8bc9dad95937a0c, type: 3}
+  - {fileID: 3350004287758763384, guid: f27d5caad43cfe946b4a958cd4cddf35, type: 3}
+  - {fileID: 3350004287758763384, guid: 90f58bcb1897fc543ad6693be4bd63f8, type: 3}
+  - {fileID: 3350004287758763384, guid: c29525fe5b8151e41bdd359e917c4506, type: 3}
+  - {fileID: 3350004287758763384, guid: 6c3e2bf44d03c4b408ebec9b0c61ac05, type: 3}
+  - {fileID: 3350004287758763384, guid: efdbedb655ada4b4e84a4620cb6fdc9b, type: 3}
+  - {fileID: 3350004287758763384, guid: be48c25aad4c2b747ad25a1cffc9df4e, type: 3}
+  - {fileID: 3350004287758763384, guid: 63fbb306ed059004ba8a1809ea2419ae, type: 3}
+  - {fileID: 3350004287758763384, guid: 093d5930d21f1974482908f691d796b1, type: 3}
+  blockCounterMax: 3
+  levelHeight: 10
+  basicBlocksNumber: 3
+  otherBlocksNumber: 19
