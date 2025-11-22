@@ -290,6 +290,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerAndCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 4478422588894086475, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4478422588894086475, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5184893110649831140, guid: 3ac29426d88662a47abe4a3c0e4f64a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -542,7 +550,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -731,7 +739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4367414610450003814, guid: afdab9a5978b3b34d8889cab9eb55de9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level3
+      value: Level5
       objectReference: {fileID: 0}
     - target: {fileID: 7743645071249967985, guid: afdab9a5978b3b34d8889cab9eb55de9, type: 3}
       propertyPath: unlockLevels

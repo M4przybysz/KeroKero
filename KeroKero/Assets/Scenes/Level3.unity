@@ -943,6 +943,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 4367414610450003814, guid: afdab9a5978b3b34d8889cab9eb55de9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level3
+      objectReference: {fileID: 0}
     - target: {fileID: 4782156455195909023, guid: afdab9a5978b3b34d8889cab9eb55de9, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9986295
