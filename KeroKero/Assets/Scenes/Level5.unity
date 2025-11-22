@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 4192646812533830868, guid: 17aa33f2a4724bf4dbf0b4ac87abd4c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5997211133868588002, guid: 17aa33f2a4724bf4dbf0b4ac87abd4c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Level3
@@ -697,6 +701,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 2958427692014215919, guid: afdab9a5978b3b34d8889cab9eb55de9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3730593999724432626, guid: afdab9a5978b3b34d8889cab9eb55de9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Level3
@@ -862,6 +870,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 8756833796039325275, guid: 0edd278bb2953964b9fd41e866880ba8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -991,11 +1003,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3350595810798708222, guid: e92aed41e3b3d274d88695c0889a3433, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 260
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 5016573377346753277, guid: e92aed41e3b3d274d88695c0889a3433, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 700
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 6093654484641173127, guid: e92aed41e3b3d274d88695c0889a3433, type: 3}
       propertyPath: m_Name
