@@ -278,7 +278,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: b63625d195afce84e9149113d568afef, type: 3}
     - target: {fileID: 5997211133868588002, guid: 17aa33f2a4724bf4dbf0b4ac87abd4c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level1
+      value: Level3
       objectReference: {fileID: 0}
     - target: {fileID: 6563813908978257694, guid: 17aa33f2a4724bf4dbf0b4ac87abd4c6, type: 3}
       propertyPath: m_Pivot.x
@@ -1279,7 +1279,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6761396951309847, guid: 0edd278bb2953964b9fd41e866880ba8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level1
+      value: Level3
       objectReference: {fileID: 0}
     - target: {fileID: 248574699166937616, guid: 0edd278bb2953964b9fd41e866880ba8, type: 3}
       propertyPath: m_LocalRotation.w
