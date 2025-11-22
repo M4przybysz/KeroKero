@@ -63,7 +63,7 @@ public class LooseBlockCollision : MonoBehaviour
             (float)Math.Round(transform.position.y - 0.5f) + 0.5f,
             transform.position.z);
 
-        if (transform.position.y > levelHeight + 2) // Destory blocks that aren't in the hole when they stop falling
+        if (transform.position.y > levelHeight + 3) // Destory blocks that aren't in the hole when they stop falling
         {
             Destroy(gameObject);
         }

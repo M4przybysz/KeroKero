@@ -1033,7 +1033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7743645071249967985, guid: afdab9a5978b3b34d8889cab9eb55de9, type: 3}
       propertyPath: unlockLevels
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8523392238808257726, guid: afdab9a5978b3b34d8889cab9eb55de9, type: 3}
       propertyPath: m_SizeDelta.x
