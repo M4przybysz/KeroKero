@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("DeathTrigger") && !isMoving && !isJumping && !isBouncing)
         {
             GameObject.Find("DeathMenu").GetComponent<DeathMenuController>().ShowDeathMenu();
-            SoundManager.PlaySound(SoundType.Loose, 0.4f);
+            SoundManager.PlaySound(SoundType.Lose, 0.4f);
             SoundManager.PlaySound(SoundType.Death, 0.5f);
         }
     }

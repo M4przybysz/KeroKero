@@ -11,9 +11,10 @@ public enum SoundType
     ObjectFall,
     Death,
     Win,
-    Loose,
+    Lose,
     ButtonClick
 }
+
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
