@@ -9,7 +9,7 @@ public class UIController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        SoundManager.PlayLooping(SoundType.GameMusic, 0.2f);
     }
 
     // Update is called once per frame

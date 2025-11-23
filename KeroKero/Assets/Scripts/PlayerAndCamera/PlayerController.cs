@@ -88,11 +88,13 @@ public class PlayerController : MonoBehaviour
             if (!isJumping)
             {
                 frogAnimator.SetTrigger("JumpTrigger");
+                SoundManager.PlaySound(SoundType.FrogJump);
                 JumpUp(); 
             }
             if (canBounce) 
             { 
                 frogAnimator.SetTrigger("JumpTrigger");
+                SoundManager.PlaySound(SoundType.FrogJump);
                 BounceUp(); 
             }
         }
@@ -109,7 +111,9 @@ public class PlayerController : MonoBehaviour
             Vector3 normal = collision.contacts[collision.contactCount - 1].normal;
 
             // If player is out of the hole show win menu
-            if (normal.y > 0.5f) { GameObject.Find("WinMenu").GetComponent<WinMenuController>().ShowWinMenu(); } 
+            if (normal.y > 0.5f) { GameObject.Find("WinMenu").GetComponent<WinMenuController>().ShowWinMenu();
+                SoundManager.PlaySound(SoundType.Win);
+            } 
         }
 
         if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Outside"))
@@ -142,6 +146,8 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("DeathTrigger") && !isMoving && !isJumping && !isBouncing)
         {
             GameObject.Find("DeathMenu").GetComponent<DeathMenuController>().ShowDeathMenu();
+            SoundManager.PlaySound(SoundType.Loose, 0.25f);
+            SoundManager.PlaySound(SoundType.Death, 0.35f);
         }
     }
     
