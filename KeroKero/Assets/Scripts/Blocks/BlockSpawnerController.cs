@@ -6,7 +6,7 @@ public class BlockSpawnerController : MonoBehaviour
     int spawnRangeX = 2;
     int spawnRangeZ = 2;
     float firsBlocSpawnkDelay = 1f;
-    float blockSpawnDelay = 1.5f;
+    float blockSpawnDelay = 1f;
     public int blockCounterMax;
     int blockCounter;
     public int levelHeight = 10;
