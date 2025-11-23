@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] Animator frogAnimator;
     [SerializeField] MoveCamera moveCamera;
+    Rigidbody playerRb;
     Dictionary<string, float> directions = new Dictionary<string, float> // WSAD movement directions
     {
         {"forward", 0f},
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerRb = GetComponent<Rigidbody>();
         resetMovement = false;
     }
 
@@ -129,7 +131,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Outside"))
         {
             isInAir++;
-            StartCoroutine(UnbugMovement());
+            StartCoroutine(UnbugMovement()); // Fix movement locking
 
             if (isJumping && isOnWall > 0) { isOnWall--; }
         }
@@ -146,7 +148,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator UnbugMovement()
     {
         yield return new WaitForSeconds(0.1f);
-        if(transform.position.y % 1 < 0.5f) { isInAir = -1; }
+        if(transform.position.y % 1 < 0.5f && playerRb.linearVelocity.y == 0) { isInAir = -1; }
     }
 
     //=====================================================================================================
