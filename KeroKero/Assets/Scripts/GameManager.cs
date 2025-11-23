@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         set {
             if (value >= _levelsCompleted)
             {
-                _levelsCompleted = Mathf.Clamp(value, 0, 3); // Change to max 10 in the full version 
+                _levelsCompleted = Mathf.Clamp(value, 0, 5); 
             }
         }
     }
