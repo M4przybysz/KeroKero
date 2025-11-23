@@ -2587,6 +2587,8 @@ MonoBehaviour:
   - {fileID: 748218931}
   - {fileID: 147883910}
   - {fileID: 1083233105}
+  - {fileID: 1174611417}
+  - {fileID: 298585955}
   credits: {fileID: 1233346709}
 --- !u!1 &1160970855
 GameObject:
