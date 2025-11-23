@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         HandleInputs();
-        // print(isMoving + ", " + isJumping + ", " + isInAir);
+        // print(isInAir + ", " + isJumping + ", " + isMoving + ", " + resetMovement);
     }
 
     //=====================================================================================================
@@ -129,6 +129,8 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Outside"))
         {
             isInAir++;
+            StartCoroutine(UnbugMovement());
+
             if (isJumping && isOnWall > 0) { isOnWall--; }
         }
     }
@@ -141,6 +143,12 @@ public class PlayerController : MonoBehaviour
         }
     }
     
+    IEnumerator UnbugMovement()
+    {
+        yield return new WaitForSeconds(0.1f);
+        if(transform.position.y % 1 < 0.5f) { isInAir = -1; }
+    }
+
     //=====================================================================================================
     // Custom methods
     //=====================================================================================================
