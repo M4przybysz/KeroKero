@@ -32,7 +32,7 @@ public class BlockSpawnerController : MonoBehaviour
         int blockIndex;
         if (blockCounter == 0)
         {
-            blockIndex = Random.Range(basicBlocksNumber, basicBlocksNumber + otherBlocksNumber - 1); // Spawn random other block
+            blockIndex = Random.Range(basicBlocksNumber, basicBlocksNumber + otherBlocksNumber); // Spawn random other block
             blockCounter = blockCounterMax;
         }
         else { blockIndex = Random.Range(0, basicBlocksNumber); } // Spawn random "basic" block
