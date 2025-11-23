@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
         {"back", 180f}
     };
     // Vectors used to calculate movement
+    Vector3 frogHalfExtents = new(0.325f, 0.15f, 0.325f);
     Vector3 originalPosition;
     Vector3 targetPosition;
     Vector3 originalRotation;
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
     bool isJumping = false;
     bool canBounce = false;
     bool isBouncing = false;
+    bool hasWall;
 
     //=====================================================================================================
     // Start and Update
@@ -190,6 +192,18 @@ public class PlayerController : MonoBehaviour
         originalRotation = transform.eulerAngles;
         targetRotation = originalRotation + targetRotationShift;
 
+        Collider[] hits = Physics.OverlapBox(targetPosition, frogHalfExtents, Quaternion.Euler(targetRotation));
+        hasWall = false;
+
+        foreach(var hit in hits)
+        {
+            if (!hit.isTrigger)
+            {
+                hasWall = true;
+                break;
+            }
+        }
+
         // Lerp to the target position and rotation
         while (elapsedTime < timeForMovement)
         {
@@ -211,7 +225,7 @@ public class PlayerController : MonoBehaviour
         isJumping = true;
         StartCoroutine(MovePlayerIn3D(transform.forward * 0.35f + transform.up * 1.35f, new Vector3(-90, 0, 0), timeToJump, () =>
         {
-            if (isOnWall > 0) { StartCoroutine(AwaitBounce()); }
+            if (isOnWall > 0 || hasWall) { StartCoroutine(AwaitBounce()); }
             else { FallForwad(); }
         }));
     }
@@ -226,7 +240,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(MovePlayerIn3D(transform.forward + transform.up * 0.7f, new Vector3(0, 180, 0), timeToJump, () =>
         {
             isBouncing = false;
-            if (isOnWall > 0) { StartCoroutine(AwaitBounce()); }
+            if (isOnWall > 0 || hasWall) { StartCoroutine(AwaitBounce()); }
             else { FallForwad(); }
         }));
     }
