@@ -31,7 +31,7 @@ public class BlockRandomMovement : MonoBehaviour
 
     void RandomMovementAndRotation()
     {
-        if(!stop && transform.position.y > levelHeight + 2)
+        if(!stop && transform.position.y > levelHeight + 8)
         {
             // bool doMovement = true;
             bool doMovement = (Random.Range(1, randomMovementChance + 1) == 1) ? true : false; // Gample to trigger random movement

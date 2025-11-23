@@ -34,12 +34,19 @@ public class BlockFall : MonoBehaviour
                 Destroy(lights); // Turn off the lights
 
                 // Snap to position
-                transform.position = new Vector3(
-                    transform.position.x,
-                    (float)Math.Round(transform.position.y - 0.5f) + 0.5f,
-                    transform.position.z);
+                float snapY = (float)Math.Round(transform.position.y - 0.5f) + 0.5f;
+                RaycastHit hit;
 
-                if (transform.position.y > levelHeight + 2) // Destory blocks that aren't in the hole when they stop falling
+                if (!Physics.BoxCast(transform.position, transform.localScale * 0.5f * 0.99f, Vector3.down,
+                    out hit, Quaternion.identity, transform.position.y - snapY))
+                { transform.position = new Vector3(transform.position.x, snapY, transform.position.z); }
+                else
+                {
+                    // Adjust snap to be above the block below
+                    transform.position = new Vector3(transform.position.x, hit.point.y + 0.5f, transform.position.z);
+                }
+
+                if (transform.position.y > levelHeight + 3) // Destory blocks that aren't in the hole when they stop falling
                 {
                     Destroy(gameObject);
                 }
