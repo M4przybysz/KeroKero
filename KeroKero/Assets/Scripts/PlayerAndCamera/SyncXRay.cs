@@ -24,7 +24,7 @@ public class SyncXRay : MonoBehaviour
 
         if (Physics.Raycast(ray, 3000, mask))
         {
-            foreach(Material bm in blockMaterials) { bm.SetFloat(sizeID, 1); }
+            foreach(Material bm in blockMaterials) { bm.SetFloat(sizeID, 1.25f); }
         }
         else
         {

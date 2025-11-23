@@ -30,7 +30,7 @@ public class WinMenuController : MonoBehaviour
         // Lock and hide cursor
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-
+        SoundManager.instance.StopSound();
         ShowOrHideMenu(true); // Show or hide pause menu
         Time.timeScale = 0; // Stop or resume gameplay;
 

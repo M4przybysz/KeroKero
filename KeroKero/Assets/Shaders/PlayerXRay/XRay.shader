@@ -7,7 +7,7 @@ Shader "Custom/XRay"
         [NoScaleOffset]_Normal_Map("Normal Map", 2D) = "white" {}
         _Texture_Tiling("Texture Tiling", Vector) = (1, 1, 0, 0)
         _Texture_Offset("Texture Offset", Vector) = (0, 0, 0, 0)
-        _Size("Size", Float) = 1
+        _Size("Size", Float) = 1.25
         _Smoothness("Smoothness", Range(0, 1)) = 0.5
         _Opacity("Opacity", Range(0, 1)) = 1
         [HideInInspector]_Player_Position("Player Position", Vector) = (0.5, 0.5, 0, 0)
@@ -567,8 +567,10 @@ Shader "Custom/XRay"
             Unity_Distance_float3(IN.WorldSpacePosition, _WorldSpaceCameraPos, _Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float);
             float _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float = _Player_Distance;
             float _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float;
-            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
-            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float);
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.85, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
+            float _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float;
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
+            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
             float _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float;
             Unity_Remap_float(_Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float, _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2, float2 (0, 1), _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float);
             float _Clamp_9b27be92e6994fe883a47e6e50b31612_Out_3_Float;
@@ -1187,8 +1189,10 @@ Shader "Custom/XRay"
             Unity_Distance_float3(IN.WorldSpacePosition, _WorldSpaceCameraPos, _Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float);
             float _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float = _Player_Distance;
             float _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float;
-            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
-            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float);
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.85, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
+            float _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float;
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
+            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
             float _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float;
             Unity_Remap_float(_Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float, _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2, float2 (0, 1), _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float);
             float _Clamp_9b27be92e6994fe883a47e6e50b31612_Out_3_Float;
@@ -1661,8 +1665,10 @@ Shader "Custom/XRay"
             Unity_Distance_float3(IN.WorldSpacePosition, _WorldSpaceCameraPos, _Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float);
             float _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float = _Player_Distance;
             float _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float;
-            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
-            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float);
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.85, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
+            float _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float;
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
+            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
             float _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float;
             Unity_Remap_float(_Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float, _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2, float2 (0, 1), _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float);
             float _Clamp_9b27be92e6994fe883a47e6e50b31612_Out_3_Float;
@@ -2108,8 +2114,10 @@ Shader "Custom/XRay"
             Unity_Distance_float3(IN.WorldSpacePosition, _WorldSpaceCameraPos, _Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float);
             float _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float = _Player_Distance;
             float _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float;
-            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
-            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float);
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.85, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
+            float _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float;
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
+            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
             float _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float;
             Unity_Remap_float(_Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float, _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2, float2 (0, 1), _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float);
             float _Clamp_9b27be92e6994fe883a47e6e50b31612_Out_3_Float;
@@ -2564,8 +2572,10 @@ Shader "Custom/XRay"
             Unity_Distance_float3(IN.WorldSpacePosition, _WorldSpaceCameraPos, _Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float);
             float _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float = _Player_Distance;
             float _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float;
-            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
-            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float);
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.85, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
+            float _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float;
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
+            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
             float _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float;
             Unity_Remap_float(_Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float, _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2, float2 (0, 1), _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float);
             float _Clamp_9b27be92e6994fe883a47e6e50b31612_Out_3_Float;
@@ -3055,8 +3065,10 @@ Shader "Custom/XRay"
             Unity_Distance_float3(IN.WorldSpacePosition, _WorldSpaceCameraPos, _Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float);
             float _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float = _Player_Distance;
             float _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float;
-            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
-            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float);
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.85, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
+            float _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float;
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
+            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
             float _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float;
             Unity_Remap_float(_Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float, _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2, float2 (0, 1), _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float);
             float _Clamp_9b27be92e6994fe883a47e6e50b31612_Out_3_Float;
@@ -3557,8 +3569,10 @@ Shader "Custom/XRay"
             Unity_Distance_float3(IN.WorldSpacePosition, _WorldSpaceCameraPos, _Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float);
             float _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float = _Player_Distance;
             float _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float;
-            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
-            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float);
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.85, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
+            float _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float;
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
+            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
             float _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float;
             Unity_Remap_float(_Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float, _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2, float2 (0, 1), _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float);
             float _Clamp_9b27be92e6994fe883a47e6e50b31612_Out_3_Float;
@@ -4016,8 +4030,10 @@ Shader "Custom/XRay"
             Unity_Distance_float3(IN.WorldSpacePosition, _WorldSpaceCameraPos, _Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float);
             float _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float = _Player_Distance;
             float _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float;
-            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
-            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float);
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.85, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
+            float _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float;
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
+            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
             float _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float;
             Unity_Remap_float(_Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float, _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2, float2 (0, 1), _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float);
             float _Clamp_9b27be92e6994fe883a47e6e50b31612_Out_3_Float;
@@ -4499,8 +4515,10 @@ Shader "Custom/XRay"
             Unity_Distance_float3(IN.WorldSpacePosition, _WorldSpaceCameraPos, _Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float);
             float _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float = _Player_Distance;
             float _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float;
-            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
-            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float);
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.85, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
+            float _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float;
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
+            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
             float _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float;
             Unity_Remap_float(_Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float, _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2, float2 (0, 1), _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float);
             float _Clamp_9b27be92e6994fe883a47e6e50b31612_Out_3_Float;
@@ -4984,8 +5002,10 @@ Shader "Custom/XRay"
             Unity_Distance_float3(IN.WorldSpacePosition, _WorldSpaceCameraPos, _Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float);
             float _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float = _Player_Distance;
             float _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float;
-            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
-            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float);
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.85, _Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float);
+            float _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float;
+            Unity_Multiply_float_float(_Property_8dfe98046aec490db7d34c34def9ae16_Out_0_Float, 0.9, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
+            float2 _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2 = float2(_Multiply_908fc8297f3541d8804e6bf5807e5ad5_Out_2_Float, _Multiply_b86ed40b44d14c70af0c5084ed0630c0_Out_2_Float);
             float _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float;
             Unity_Remap_float(_Distance_e0bb7659cf9e4d24bc637927a91485b2_Out_2_Float, _Vector2_595ebcab96b04580be2d257787193ebf_Out_0_Vector2, float2 (0, 1), _Remap_4d67c708ba1b49e98fb58a1017765f73_Out_3_Float);
             float _Clamp_9b27be92e6994fe883a47e6e50b31612_Out_3_Float;

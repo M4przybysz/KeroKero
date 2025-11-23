@@ -26,11 +26,11 @@ public class DeathMenuController : MonoBehaviour
     public void ShowDeathMenu()
     {
         // Lock and hide cursor
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-
-            ShowOrHideMenu(true); // Show or hide pause menu
-            Time.timeScale = 0; // Stop or resume gameplay;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        ShowOrHideMenu(true); // Show or hide pause menu
+        Time.timeScale = 0; // Stop or resume gameplay;
+        SoundManager.instance.StopSound();
     }
     
     public void RestartLevel(string levelName)

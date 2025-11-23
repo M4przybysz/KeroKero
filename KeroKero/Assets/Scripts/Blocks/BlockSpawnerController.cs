@@ -6,7 +6,7 @@ public class BlockSpawnerController : MonoBehaviour
     int spawnRangeX = 2;
     int spawnRangeZ = 2;
     float firsBlocSpawnkDelay = 1f;
-    float blockSpawnDelay = 1.5f;
+    float blockSpawnDelay = 1f;
     public int blockCounterMax;
     int blockCounter;
     public int levelHeight = 10;
@@ -32,7 +32,7 @@ public class BlockSpawnerController : MonoBehaviour
         int blockIndex;
         if (blockCounter == 0)
         {
-            blockIndex = Random.Range(basicBlocksNumber, basicBlocksNumber + otherBlocksNumber - 1); // Spawn random other block
+            blockIndex = Random.Range(basicBlocksNumber, basicBlocksNumber + otherBlocksNumber); // Spawn random other block
             blockCounter = blockCounterMax;
         }
         else { blockIndex = Random.Range(0, basicBlocksNumber); } // Spawn random "basic" block
@@ -43,6 +43,7 @@ public class BlockSpawnerController : MonoBehaviour
         int positionZ = Random.Range(1, spawnRangeZ + 1);
         positionZ *= Random.Range(0, 2) == 0 ? -1 : 1;
 
+       
         Vector3 spawnPosition = new Vector3(positionX, transform.position.y, positionZ);
         Vector3 spawnRotation = new Vector3(90 * Random.Range(-2, 2), 90 * Random.Range(-2, 2), 90 * Random.Range(-2, 2));
 
