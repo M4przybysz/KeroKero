@@ -171,20 +171,21 @@ public class PlayerController : MonoBehaviour
     {
         frogAnimator.SetTrigger("MovementTrigger");
         isMoving = true; // Mark movement
-        float elapsedTime = 0f; // Start counting time
+        float startTime = Time.time; // Start counting time
 
         // Calculate positions
         originalPosition = transform.position;
         targetPosition = originalPosition + transform.forward;
 
         // Lerp to the target position
-        while (elapsedTime < timeToMove && !resetMovement)
+        while (true)
         {
-            transform.position = Vector3.Lerp(originalPosition, targetPosition, elapsedTime / timeToMove);
-            elapsedTime += Time.deltaTime;
+            float currentTime = Mathf.Clamp01(Time.time - startTime) / timeToMove; // Count time during movement
+            if(currentTime >= 1f || resetMovement) break; // Break if the movement time passed
+
+            transform.position = Vector3.Lerp(originalPosition, targetPosition, currentTime);
             yield return null;
         }
-
         
         if (resetMovement)
         {
@@ -200,7 +201,7 @@ public class PlayerController : MonoBehaviour
     // Move and rotate player in 3D space 
     IEnumerator MovePlayerIn3D(Vector3 targetPositionShift, Vector3 targetRotationShift, float timeForMovement, Action afterwork)
     {
-        float elapsedTime = 0f; // Start counting time
+        float startTime = Time.time; // Start counting time
 
         // Calculate positions
         originalPosition = transform.position;
@@ -223,11 +224,13 @@ public class PlayerController : MonoBehaviour
         }
 
         // Lerp to the target position and rotation
-        while (elapsedTime < timeForMovement)
+        while (true)
         {
-            transform.position = Vector3.Lerp(originalPosition, targetPosition, elapsedTime / timeForMovement);
-            transform.eulerAngles = Vector3.Lerp(originalRotation, targetRotation, elapsedTime / timeForMovement);
-            elapsedTime += Time.deltaTime; // Count time
+            float currentTime = Mathf.Clamp01((Time.time - startTime) / timeForMovement); // Count time during movement
+            if(currentTime >= 1f) break; // Break if the movement time passed
+
+            transform.position = Vector3.Lerp(originalPosition, targetPosition, currentTime);
+            transform.eulerAngles = Vector3.Lerp(originalRotation, targetRotation, currentTime);
             yield return null;
         }
 
