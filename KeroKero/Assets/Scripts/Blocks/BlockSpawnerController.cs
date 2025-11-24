@@ -3,8 +3,8 @@ using UnityEngine;
 public class BlockSpawnerController : MonoBehaviour
 {
     [SerializeField] GameObject[] blocks;
-    int spawnRangeX = 2;
-    int spawnRangeZ = 2;
+    int spawnRangeX = 4;
+    int spawnRangeZ = 4;
     float firsBlocSpawnkDelay = 1f;
     float blockSpawnDelay = 1f;
     public int blockCounterMax;
@@ -42,7 +42,6 @@ public class BlockSpawnerController : MonoBehaviour
 
         int positionZ = Random.Range(1, spawnRangeZ + 1);
         positionZ *= Random.Range(0, 2) == 0 ? -1 : 1;
-
        
         Vector3 spawnPosition = new Vector3(positionX, transform.position.y, positionZ);
         Vector3 spawnRotation = new Vector3(90 * Random.Range(-2, 2), 90 * Random.Range(-2, 2), 90 * Random.Range(-2, 2));

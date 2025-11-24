@@ -12,6 +12,7 @@ public class BlockRandomMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        checkSpawnPosition();
         levelHeight = GameObject.Find("BlockSpawner").GetComponent<BlockSpawnerController>().levelHeight;
         InvokeRepeating(nameof(RandomMovementAndRotation), tickDelay, tickDelay);
     }
@@ -85,6 +86,19 @@ public class BlockRandomMovement : MonoBehaviour
                     transform.eulerAngles = ghost.eulerAngles; // Rotate entire block to the ghost's rotation
                     ghost.localEulerAngles = Vector3.zero; // Return the ghost to block's inside
                 }
+            }
+        }
+    }
+
+    void checkSpawnPosition()
+    {
+         for (int i = 0; i < ghost.childCount; i++)
+        {
+            // Check if any ghost block is out of level bounds  
+            if (ghost.GetChild(i).position.x > 4.5f || ghost.GetChild(i).position.x < -4.5f ||
+                ghost.GetChild(i).position.z > 4.5f || ghost.GetChild(i).position.z < -4.5f)
+            {
+                transform.position = new Vector3(0, transform.position.y, 0); // Reset position if it would be out of bounds
             }
         }
     }

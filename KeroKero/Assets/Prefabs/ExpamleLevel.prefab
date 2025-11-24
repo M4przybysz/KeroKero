@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1437097355886161550}
   - component: {fileID: 7530482575531550015}
   - component: {fileID: 756179240031042012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 1272173567664349111}
   - component: {fileID: 7871315019896163533}
   - component: {fileID: 5820945450799755586}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 3228474610793891624}
   - component: {fileID: 2924008930874354937}
   - component: {fileID: 3323190739803524914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 3022240187766797063}
   - component: {fileID: 156690272004321989}
   - component: {fileID: 4826103157699389395}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OutsideBlock (4)
   m_TagString: Outside
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 8052829972362637626}
   - component: {fileID: 4790390126537117167}
   - component: {fileID: 7484001032720395369}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OutsideBlock (3)
   m_TagString: Outside
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ GameObject:
   - component: {fileID: 4060667531825468656}
   - component: {fileID: 7092326125176236644}
   - component: {fileID: 5906400607286645269}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OutsideBlock (2)
   m_TagString: Outside
   m_Icon: {fileID: 0}
@@ -660,7 +660,7 @@ GameObject:
   - component: {fileID: 993651621569109398}
   - component: {fileID: 1337146474405592245}
   - component: {fileID: 1679209464614460878}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OutsideBlock (1)
   m_TagString: Outside
   m_Icon: {fileID: 0}
@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 9050554757284828628}
   - component: {fileID: 8910745715516246873}
   - component: {fileID: 5486912848297477071}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -876,7 +876,7 @@ GameObject:
   - component: {fileID: 4411635567278330118}
   - component: {fileID: 5404509715076156958}
   - component: {fileID: 8013093535538484316}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OutsideBlock
   m_TagString: Outside
   m_Icon: {fileID: 0}
@@ -984,7 +984,7 @@ GameObject:
   - component: {fileID: 7411937592780299820}
   - component: {fileID: 30793926226014351}
   - component: {fileID: 3190356082216692142}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OutsideBlock (6)
   m_TagString: Outside
   m_Icon: {fileID: 0}
@@ -1161,7 +1161,7 @@ GameObject:
   - component: {fileID: 2176147650901576450}
   - component: {fileID: 7762441299926150047}
   - component: {fileID: 2921043450733608322}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OutsideBlock (5)
   m_TagString: Outside
   m_Icon: {fileID: 0}
@@ -1269,7 +1269,7 @@ GameObject:
   - component: {fileID: 2380703848416894604}
   - component: {fileID: 606285021686588943}
   - component: {fileID: 4039699123145433664}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OutsideBlock (7)
   m_TagString: Outside
   m_Icon: {fileID: 0}
@@ -1416,7 +1416,7 @@ GameObject:
   - component: {fileID: 7700283909798213367}
   - component: {fileID: 3997603706262482326}
   - component: {fileID: 1001265126669266966}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
   m_Icon: {fileID: 0}

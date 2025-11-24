@@ -27,14 +27,15 @@ public class PlayerController : MonoBehaviour
     float timeToPressBounce = 0.5f;
     // Movement bools to check stuff
     int isOnWall = 0; // Collision counter
-    int isInAir = 0;
     bool isMoving = false;
     bool resetMovement = false;
-    public bool canJump = true;
+    public bool isJumpAllowed = true;
     bool isJumping = false;
     bool canBounce = false;
     bool isBouncing = false;
     bool hasWall;
+    bool canMove;
+    bool canJump;
 
     //=====================================================================================================
     // Start and Update
@@ -51,7 +52,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         HandleInputs();
-        // print(isInAir + ", " + isJumping + ", " + isMoving + ", " + resetMovement);
     }
 
     //=====================================================================================================
@@ -59,31 +59,34 @@ public class PlayerController : MonoBehaviour
     //=====================================================================================================
     void HandleInputs()
     {
-        if (Input.GetKeyDown(KeyCode.W) && !isMoving && !isJumping && isInAir <= -1)
+        canMove = (IsGrounded() || isOnWall > 0) && !isMoving && !isJumping;
+        canJump = !isMoving && IsGrounded() && isJumpAllowed;
+
+        if (Input.GetKeyDown(KeyCode.W) && canMove)
         {
             RotatePlayer("forward");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && !isMoving && !isJumping && isInAir <= -1)
+        if (Input.GetKeyDown(KeyCode.S) && canMove)
         {
             RotatePlayer("back");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.A) && !isMoving && !isJumping && isInAir <= -1)
+        if (Input.GetKeyDown(KeyCode.A) && canMove)
         {
             RotatePlayer("left");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && !isMoving && !isJumping && isInAir <= -1)
+        if (Input.GetKeyDown(KeyCode.D) && canMove)
         {
             RotatePlayer("right");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isMoving && isInAir <= -1 && canJump)
+        if (Input.GetKeyDown(KeyCode.Space) && canJump)
         {
             if (!isJumping)
             {
@@ -118,8 +121,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Outside"))
         {
-            isInAir--;
-            if (isInAir <= -1) { moveCamera.ChangeCameraHeight(transform.position.y); } // Trigger camera movement
+            if (IsGrounded()) { moveCamera.ChangeCameraHeight(transform.position.y); } // Trigger camera movement
             if (isJumping) { isOnWall++; }
 
             // Check where the player is colliding with the block
@@ -134,32 +136,32 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Outside"))
         {
-            isInAir++;
-            StartCoroutine(UnbugMovement()); // Fix movement locking
-
             if (isJumping && isOnWall > 0) { isOnWall--; }
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("DeathTrigger") && !isMoving && !isJumping && !isBouncing)
+        if (other.CompareTag("DeathTrigger"))
         {
             GameObject.Find("DeathMenu").GetComponent<DeathMenuController>().ShowDeathMenu();
             SoundManager.PlaySound(SoundType.Lose, 0.4f);
             SoundManager.PlaySound(SoundType.Death, 0.5f);
         }
     }
-    
-    IEnumerator UnbugMovement()
-    {
-        yield return new WaitForSeconds(0.1f);
-        if(transform.position.y % 1 < 0.5f && playerRb.linearVelocity.y == 0) { isInAir = -1; }
-    }
 
     //=====================================================================================================
     // Custom methods
     //=====================================================================================================
+    bool IsGrounded() // Check if player is on ground
+    {
+        Vector3 halfExtents = new Vector3(0.325f, 0.15f, 0.325f); // Frog half extents
+        Vector3 checkPos = transform.position + Vector3.down * 0.15f;
+        int blockMask = 64; // 64 = mask 6 == Wall (includes blocks, ground and outside)
+
+        return Physics.CheckBox(checkPos, halfExtents, transform.rotation, blockMask);
+    }
+
     void RotatePlayer(string direction) // Rotate player in direction of movement
     {
         transform.eulerAngles = new Vector3(0, directions[direction], 0);
