@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1877338556330842282}
   - component: {fileID: 102431738707841839}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: GhostBlock (2)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5900628545220608123}
   - component: {fileID: 3916756032030462756}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: GhostBlock (5)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6706511161765679651}
   - component: {fileID: 6118832941869925917}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: GhostBlock (3)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8249136416456142291}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520400687219079458}
   - component: {fileID: 4648458141323305565}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: GhostBlock (4)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 468362691991173159}
   - component: {fileID: 4288692926272210765}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: GhostBlock (1)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6419789400078646259}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6190798989158922362}
   - component: {fileID: 7148166940164478454}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: GhostBlock
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -400,6 +400,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6419789400078646259}
     m_Modifications:
+    - target: {fileID: 2315127187276063421, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6899842351022123724, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -444,6 +448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpotLight (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9072677657514173525, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -462,6 +470,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6419789400078646259}
     m_Modifications:
+    - target: {fileID: 2315127187276063421, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6899842351022123724, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -506,6 +518,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpotLight
       objectReference: {fileID: 0}
+    - target: {fileID: 9072677657514173525, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -524,6 +540,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6419789400078646259}
     m_Modifications:
+    - target: {fileID: 2315127187276063421, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6899842351022123724, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2
@@ -568,6 +588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpotLight (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 9072677657514173525, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -586,6 +610,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6419789400078646259}
     m_Modifications:
+    - target: {fileID: 2315127187276063421, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6899842351022123724, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -630,6 +658,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpotLight (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9072677657514173525, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -648,6 +680,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6419789400078646259}
     m_Modifications:
+    - target: {fileID: 2315127187276063421, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6899842351022123724, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
@@ -692,6 +728,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpotLight (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 9072677657514173525, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -710,6 +750,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6419789400078646259}
     m_Modifications:
+    - target: {fileID: 2315127187276063421, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6899842351022123724, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -753,6 +797,10 @@ PrefabInstance:
     - target: {fileID: 9072677657514173525, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
       propertyPath: m_Name
       value: SpotLight (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072677657514173525, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -838,7 +886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 939ad14dca5ba694286a47e32d4edffe, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 939ad14dca5ba694286a47e32d4edffe, type: 3}
       propertyPath: m_TagString

@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frogAnimator: {fileID: 5636002593236506079}
   moveCamera: {fileID: 3289318926263537157}
-  canJump: 1
+  isJumpAllowed: 1
 --- !u!1 &3728950378978296783
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,4 +675,4 @@ MonoBehaviour:
   mainCamera: {fileID: 4566802612173645791}
   mask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128

@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 halfExtents = new Vector3(0.325f, 0.15f, 0.325f); // Frog half extents
         Vector3 checkPos = transform.position + Vector3.down * 0.15f;
-        int blockMask = 64; // 64 = mask 6 == Wall (includes blocks, ground and outside)
+        int blockMask = 192; // 64 = mask 6 == Wall (includes blocks, ground and outside)
 
         return Physics.CheckBox(checkPos, halfExtents, transform.rotation, blockMask);
     }
