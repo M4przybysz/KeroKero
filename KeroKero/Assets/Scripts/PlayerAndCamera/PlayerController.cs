@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] Animator frogAnimator;
     [SerializeField] MoveCamera moveCamera;
-    Rigidbody playerRb;
+    Rigidbody playerRigidbody;
     Dictionary<string, float> directions = new Dictionary<string, float> // WSAD movement directions
     {
         {"forward", 0f},
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerRb = GetComponent<Rigidbody>();
+        playerRigidbody = GetComponent<Rigidbody>();
         resetMovement = false;
     }
 
@@ -93,12 +93,6 @@ public class PlayerController : MonoBehaviour
                 frogAnimator.SetTrigger("JumpTrigger");
                 SoundManager.PlaySound(SoundType.FrogJump);
                 JumpUp(); 
-            }
-            if (canBounce) 
-            { 
-                frogAnimator.SetTrigger("JumpTrigger");
-                SoundManager.PlaySound(SoundType.FrogJump);
-                BounceUp(); 
             }
         }
     }
@@ -253,10 +247,10 @@ public class PlayerController : MonoBehaviour
 
     void BounceUp() // Bounce from the wall in the other direction
     {
-        canBounce = false;
-        isBouncing = true;
         StopAllCoroutines();
-        gameObject.GetComponent<Rigidbody>().useGravity = true;
+        // canBounce = false;
+        isBouncing = true;
+        playerRigidbody.useGravity = true;
         
         StartCoroutine(MovePlayerIn3D(transform.forward + transform.up * 0.7f, new Vector3(0, 180, 0), timeToJump, () =>
         {
@@ -282,15 +276,31 @@ public class PlayerController : MonoBehaviour
         canBounce = true; // Allow bouncing
 
         // Stop player on wall
-        gameObject.GetComponent<Rigidbody>().useGravity = false;
-        gameObject.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+        playerRigidbody.useGravity = false;
+        playerRigidbody.linearVelocity = Vector3.zero;
 
-        yield return new WaitForSeconds(timeToPressBounce); // Waiting for input
+        // Wait for input
+        float timer = 0f;
+        while (timer < timeToPressBounce)
+        {
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                canBounce = false;
+                frogAnimator.SetTrigger("JumpTrigger");
+                SoundManager.PlaySound(SoundType.FrogJump);
+                BounceUp(); 
+                break;
+            }
 
-        gameObject.GetComponent<Rigidbody>().useGravity = true; // Turn the gravity back on
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        playerRigidbody.useGravity = true; // Turn the gravity back on
 
         if (canBounce && !isBouncing)
         {
+            print(canBounce + ", " + isBouncing);
             canBounce = false; // Disable bouncing
             FallBack(); // Return to the ground
         }
