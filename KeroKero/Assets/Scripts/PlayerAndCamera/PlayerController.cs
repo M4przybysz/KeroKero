@@ -300,7 +300,6 @@ public class PlayerController : MonoBehaviour
 
         if (canBounce && !isBouncing)
         {
-            print(canBounce + ", " + isBouncing);
             canBounce = false; // Disable bouncing
             FallBack(); // Return to the ground
         }
