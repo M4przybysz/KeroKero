@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
     //=====================================================================================================
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Outside"))
+        if (collision.gameObject.CompareTag("Outside") && !isJumping && !isMoving && !isBouncing)
         {
             // Check where the player is colliding with the block
             Vector3 normal = collision.contacts[collision.contactCount - 1].normal;
