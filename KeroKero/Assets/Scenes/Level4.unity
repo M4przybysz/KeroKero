@@ -1237,6 +1237,14 @@ PrefabInstance:
       propertyPath: unlockLevels
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 9218792966308511565, guid: afdab9a5978b3b34d8889cab9eb55de9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1496766106}
+    - target: {fileID: 9218792966308511565, guid: afdab9a5978b3b34d8889cab9eb55de9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitToTitleScreen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

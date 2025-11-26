@@ -100,9 +100,9 @@ public class PlayerController : MonoBehaviour
     //=====================================================================================================
     // Unity methods
     //=====================================================================================================
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Outside") && !isJumping && !isMoving && !isBouncing)
+        if (collision.gameObject.CompareTag("Outside"))
         {
             // Check where the player is colliding with the block
             Vector3 normal = collision.contacts[collision.contactCount - 1].normal;
@@ -111,8 +111,11 @@ public class PlayerController : MonoBehaviour
             if (normal.y > 0.5f) { GameObject.Find("WinMenu").GetComponent<WinMenuController>().ShowWinMenu();
                 SoundManager.PlaySound(SoundType.Win);
             } 
-        }
+        }        
+    }
 
+    void OnCollisionEnter(Collision collision)
+    {
         if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Outside"))
         {
             if (IsGrounded()) { moveCamera.ChangeCameraHeight(transform.position.y); } // Trigger camera movement
