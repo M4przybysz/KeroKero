@@ -19,6 +19,8 @@ public class MainMenuController : MonoBehaviour
         LoadLevelButtons();
         areLevelsUnlocked = false;
         ShowOrHideCredits(false);
+        SoundManager.PlayLooping(SoundType.MenuMusic, 0.2f);
+
 
         // Unlock and show cursor
         Cursor.visible = true;

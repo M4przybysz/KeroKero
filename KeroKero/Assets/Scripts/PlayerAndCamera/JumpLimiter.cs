@@ -19,11 +19,11 @@ public class JumpLimiter : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Block")) { playerController.canJump = false; }
+        if (collision.gameObject.CompareTag("Block")) { playerController.isJumpAllowed = false; }
     }
 
     void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Block")) { playerController.canJump = true; }
+        if (collision.gameObject.CompareTag("Block")) { playerController.isJumpAllowed = true; }
     }
 }

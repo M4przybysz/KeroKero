@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5003636666633185019}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,10 +42,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9046447235964969347}
-  - component: {fileID: 2469112037622523458}
-  - component: {fileID: 6877704157764598953}
   - component: {fileID: 7777025290593252293}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: GhostBlock (1)
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -67,59 +65,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5003636666633185019}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2469112037622523458
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5740628090229112906}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6877704157764598953
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5740628090229112906}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: cee524c0e46741c44aa8e842627c31f5, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &7777025290593252293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -150,7 +95,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6283579720825072129}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,10 +128,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3604049504188850920}
-  - component: {fileID: 8349123155860044067}
-  - component: {fileID: 4624853638034613038}
   - component: {fileID: 6502731070861419185}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: GhostBlock
   m_TagString: GhostBlock
   m_Icon: {fileID: 0}
@@ -208,59 +151,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5003636666633185019}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8349123155860044067
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8055204673757025370}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4624853638034613038
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8055204673757025370}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: cee524c0e46741c44aa8e842627c31f5, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &6502731070861419185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -290,6 +180,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6283579720825072129}
     m_Modifications:
+    - target: {fileID: 2315127187276063421, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6899842351022123724, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -333,6 +227,10 @@ PrefabInstance:
     - target: {fileID: 9072677657514173525, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
       propertyPath: m_Name
       value: SpotLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072677657514173525, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -418,7 +316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 08f55241aa912174e9dc0690f3ad49e0, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 08f55241aa912174e9dc0690f3ad49e0, type: 3}
       propertyPath: m_TagString
@@ -539,6 +437,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6283579720825072129}
     m_Modifications:
+    - target: {fileID: 2315127187276063421, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6899842351022123724, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -582,6 +484,10 @@ PrefabInstance:
     - target: {fileID: 9072677657514173525, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
       propertyPath: m_Name
       value: SpotLight (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072677657514173525, guid: 4efe95b95cc2d5b429be023df1847d9f, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -8,6 +8,7 @@ public class PauseMenuController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
         isPauseOn = false;
         ShowOrHideMenu(false);
     }
@@ -35,6 +36,7 @@ public class PauseMenuController : MonoBehaviour
     
     void ShowOrHideMenu(bool showOrHide) // true - show, false - hide
     {
+        SoundManager.instance.PauseSound(showOrHide);
         for(int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(showOrHide);

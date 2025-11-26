@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] Animator frogAnimator;
     [SerializeField] MoveCamera moveCamera;
+    Rigidbody playerRigidbody;
     Dictionary<string, float> directions = new Dictionary<string, float> // WSAD movement directions
     {
         {"forward", 0f},
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
         {"back", 180f}
     };
     // Vectors used to calculate movement
+    Vector3 frogHalfExtents = new(0.325f, 0.15f, 0.325f);
     Vector3 originalPosition;
     Vector3 targetPosition;
     Vector3 originalRotation;
@@ -25,13 +27,15 @@ public class PlayerController : MonoBehaviour
     float timeToPressBounce = 0.5f;
     // Movement bools to check stuff
     int isOnWall = 0; // Collision counter
-    int isInAir = 0;
     bool isMoving = false;
     bool resetMovement = false;
-    public bool canJump = true;
+    public bool isJumpAllowed = true;
     bool isJumping = false;
     bool canBounce = false;
     bool isBouncing = false;
+    bool hasWall;
+    bool canMove;
+    bool canJump;
 
     //=====================================================================================================
     // Start and Update
@@ -40,6 +44,7 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerRigidbody = GetComponent<Rigidbody>();
         resetMovement = false;
     }
 
@@ -47,7 +52,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         HandleInputs();
-        // print(isMoving + ", " + isJumping + ", " + isInAir);
     }
 
     //=====================================================================================================
@@ -55,41 +59,40 @@ public class PlayerController : MonoBehaviour
     //=====================================================================================================
     void HandleInputs()
     {
-        if (Input.GetKeyDown(KeyCode.W) && !isMoving && !isJumping && isInAir <= -1)
+        canMove = (IsGrounded() || isOnWall > 0) && !isMoving && !isJumping;
+        canJump = !isMoving && IsGrounded() && isJumpAllowed;
+
+        if (Input.GetKeyDown(KeyCode.W) && canMove)
         {
             RotatePlayer("forward");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && !isMoving && !isJumping && isInAir <= -1)
+        if (Input.GetKeyDown(KeyCode.S) && canMove)
         {
             RotatePlayer("back");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.A) && !isMoving && !isJumping && isInAir <= -1)
+        if (Input.GetKeyDown(KeyCode.A) && canMove)
         {
             RotatePlayer("left");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && !isMoving && !isJumping && isInAir <= -1)
+        if (Input.GetKeyDown(KeyCode.D) && canMove)
         {
             RotatePlayer("right");
             StartCoroutine(MovePlayerOnGrid());
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isMoving && isInAir <= -1 && canJump)
+        if (Input.GetKeyDown(KeyCode.Space) && canJump)
         {
             if (!isJumping)
             {
                 frogAnimator.SetTrigger("JumpTrigger");
+                SoundManager.PlaySound(SoundType.FrogJump);
                 JumpUp(); 
-            }
-            if (canBounce) 
-            { 
-                frogAnimator.SetTrigger("JumpTrigger");
-                BounceUp(); 
             }
         }
     }
@@ -99,19 +102,20 @@ public class PlayerController : MonoBehaviour
     //=====================================================================================================
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Outside"))
+        if (collision.gameObject.CompareTag("Outside") && !isJumping && !isMoving && !isBouncing)
         {
             // Check where the player is colliding with the block
             Vector3 normal = collision.contacts[collision.contactCount - 1].normal;
 
             // If player is out of the hole show win menu
-            if (normal.y > 0.5f) { GameObject.Find("WinMenu").GetComponent<WinMenuController>().ShowWinMenu(); } 
+            if (normal.y > 0.5f) { GameObject.Find("WinMenu").GetComponent<WinMenuController>().ShowWinMenu();
+                SoundManager.PlaySound(SoundType.Win);
+            } 
         }
 
         if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Outside"))
         {
-            isInAir--;
-            if (isInAir <= -1) { moveCamera.ChangeCameraHeight(transform.position.y); } // Trigger camera movement
+            if (IsGrounded()) { moveCamera.ChangeCameraHeight(transform.position.y); } // Trigger camera movement
             if (isJumping) { isOnWall++; }
 
             // Check where the player is colliding with the block
@@ -126,22 +130,32 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Outside"))
         {
-            isInAir++;
             if (isJumping && isOnWall > 0) { isOnWall--; }
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("DeathTrigger") && !isMoving && !isJumping && !isBouncing)
+        if (other.CompareTag("DeathTrigger"))
         {
             GameObject.Find("DeathMenu").GetComponent<DeathMenuController>().ShowDeathMenu();
+            SoundManager.PlaySound(SoundType.Lose, 0.4f);
+            SoundManager.PlaySound(SoundType.Death, 0.5f);
         }
     }
-    
+
     //=====================================================================================================
     // Custom methods
     //=====================================================================================================
+    bool IsGrounded() // Check if player is on ground
+    {
+        Vector3 halfExtents = new Vector3(0.325f, 0.15f, 0.325f); // Frog half extents
+        Vector3 checkPos = transform.position + Vector3.down * 0.15f;
+        int blockMask = 192; // 64 = mask 6 == Wall (includes blocks, ground and outside)
+
+        return Physics.CheckBox(checkPos, halfExtents, transform.rotation, blockMask);
+    }
+
     void RotatePlayer(string direction) // Rotate player in direction of movement
     {
         transform.eulerAngles = new Vector3(0, directions[direction], 0);
@@ -151,20 +165,21 @@ public class PlayerController : MonoBehaviour
     {
         frogAnimator.SetTrigger("MovementTrigger");
         isMoving = true; // Mark movement
-        float elapsedTime = 0f; // Start counting time
+        float startTime = Time.time; // Start counting time
 
         // Calculate positions
         originalPosition = transform.position;
         targetPosition = originalPosition + transform.forward;
 
         // Lerp to the target position
-        while (elapsedTime < timeToMove && !resetMovement)
+        while (true)
         {
-            transform.position = Vector3.Lerp(originalPosition, targetPosition, elapsedTime / timeToMove);
-            elapsedTime += Time.deltaTime;
+            float currentTime = Mathf.Clamp01(Time.time - startTime) / timeToMove; // Count time during movement
+            if(currentTime >= 1f || resetMovement) break; // Break if the movement time passed
+
+            transform.position = Vector3.Lerp(originalPosition, targetPosition, currentTime);
             yield return null;
         }
-
         
         if (resetMovement)
         {
@@ -180,7 +195,7 @@ public class PlayerController : MonoBehaviour
     // Move and rotate player in 3D space 
     IEnumerator MovePlayerIn3D(Vector3 targetPositionShift, Vector3 targetRotationShift, float timeForMovement, Action afterwork)
     {
-        float elapsedTime = 0f; // Start counting time
+        float startTime = Time.time; // Start counting time
 
         // Calculate positions
         originalPosition = transform.position;
@@ -190,12 +205,26 @@ public class PlayerController : MonoBehaviour
         originalRotation = transform.eulerAngles;
         targetRotation = originalRotation + targetRotationShift;
 
-        // Lerp to the target position and rotation
-        while (elapsedTime < timeForMovement)
+        Collider[] hits = Physics.OverlapBox(targetPosition, frogHalfExtents, Quaternion.Euler(targetRotation));
+        hasWall = false;
+
+        foreach(var hit in hits)
         {
-            transform.position = Vector3.Lerp(originalPosition, targetPosition, elapsedTime / timeForMovement);
-            transform.eulerAngles = Vector3.Lerp(originalRotation, targetRotation, elapsedTime / timeForMovement);
-            elapsedTime += Time.deltaTime; // Count time
+            if (!hit.isTrigger)
+            {
+                hasWall = true;
+                break;
+            }
+        }
+
+        // Lerp to the target position and rotation
+        while (true)
+        {
+            float currentTime = Mathf.Clamp01((Time.time - startTime) / timeForMovement); // Count time during movement
+            if(currentTime >= 1f) break; // Break if the movement time passed
+
+            transform.position = Vector3.Lerp(originalPosition, targetPosition, currentTime);
+            transform.eulerAngles = Vector3.Lerp(originalRotation, targetRotation, currentTime);
             yield return null;
         }
 
@@ -211,22 +240,22 @@ public class PlayerController : MonoBehaviour
         isJumping = true;
         StartCoroutine(MovePlayerIn3D(transform.forward * 0.35f + transform.up * 1.35f, new Vector3(-90, 0, 0), timeToJump, () =>
         {
-            if (isOnWall > 0) { StartCoroutine(AwaitBounce()); }
+            if (isOnWall > 0 || hasWall) { StartCoroutine(AwaitBounce()); }
             else { FallForwad(); }
         }));
     }
 
     void BounceUp() // Bounce from the wall in the other direction
     {
-        canBounce = false;
-        isBouncing = true;
         StopAllCoroutines();
-        gameObject.GetComponent<Rigidbody>().useGravity = true;
+        // canBounce = false;
+        isBouncing = true;
+        playerRigidbody.useGravity = true;
         
         StartCoroutine(MovePlayerIn3D(transform.forward + transform.up * 0.7f, new Vector3(0, 180, 0), timeToJump, () =>
         {
             isBouncing = false;
-            if (isOnWall > 0) { StartCoroutine(AwaitBounce()); }
+            if (isOnWall > 0 || hasWall) { StartCoroutine(AwaitBounce()); }
             else { FallForwad(); }
         }));
     }
@@ -247,12 +276,27 @@ public class PlayerController : MonoBehaviour
         canBounce = true; // Allow bouncing
 
         // Stop player on wall
-        gameObject.GetComponent<Rigidbody>().useGravity = false;
-        gameObject.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+        playerRigidbody.useGravity = false;
+        playerRigidbody.linearVelocity = Vector3.zero;
 
-        yield return new WaitForSeconds(timeToPressBounce); // Waiting for input
+        // Wait for input
+        float timer = 0f;
+        while (timer < timeToPressBounce)
+        {
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                canBounce = false;
+                frogAnimator.SetTrigger("JumpTrigger");
+                SoundManager.PlaySound(SoundType.FrogJump);
+                BounceUp(); 
+                break;
+            }
 
-        gameObject.GetComponent<Rigidbody>().useGravity = true; // Turn the gravity back on
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        playerRigidbody.useGravity = true; // Turn the gravity back on
 
         if (canBounce && !isBouncing)
         {
